@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://doqvupgemct5y"]
+
+[ext_resource type="Script" path="res://testingground.gd" id="1_28gsk"]
+[ext_resource type="Script" path="res://score.gd" id="3_7466n"]
+[ext_resource type="PackedScene" uid="uid://b7cg1vu48eirk" path="res://badguy.tscn" id="3_fx77t"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_28gsk")
+
+[node name="ScoreManager" type="Node2D" parent="." groups=["score"]]
+script = ExtResource("3_7466n")
+
+[node name="ScoreLabel" type="Label" parent="ScoreManager"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score: 0"
+
+[node name="LivesLabel" type="Label" parent="ScoreManager"]
+offset_top = 24.0
+offset_right = 57.0
+offset_bottom = 47.0
+text = "Lives: 3"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="BadGuy" parent="." instance=ExtResource("3_fx77t")]
+visible = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

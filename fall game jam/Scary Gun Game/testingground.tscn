@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://doqvupgemct5y"]
+
+[ext_resource type="Script" path="res://testingground.gd" id="1_28gsk"]
+[ext_resource type="PackedScene" uid="uid://b7cg1vu48eirk" path="res://badguy.tscn" id="3_fx77t"]
+[ext_resource type="PackedScene" uid="uid://bjiorylmdcw2r" path="res://playermanager.tscn" id="4_b2krr"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_28gsk")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="BadGuy" parent="." instance=ExtResource("3_fx77t")]
+
+[node name="PlayerManager" parent="." instance=ExtResource("4_b2krr")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
