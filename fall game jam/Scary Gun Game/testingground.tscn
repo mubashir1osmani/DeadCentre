@@ -48,6 +48,7 @@ texture = ExtResource("6_divug")
 centered = false
 
 [node name="BadGuy" parent="." instance=ExtResource("3_fx77t")]
+visible = false
 z_index = 35
 z_as_relative = false
 

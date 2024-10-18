@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu138esllxy2b"]
+
+[ext_resource type="Texture2D" uid="uid://dhstrwvi7cvyb" path="res://Assets/GAME-R2BG.png" id="1_51phe"]
+[ext_resource type="Texture2D" uid="uid://c6rryrq0cxy5q" path="res://Assets/GAME-R2BOX.png" id="2_pj8gm"]
+[ext_resource type="Texture2D" uid="uid://chy2deg0rxfma" path="res://Assets/GAME-R2Shelf.png" id="3_opvs4"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.48, 0.36)
+texture = ExtResource("1_51phe")
+centered = false
+
+[node name="Box" type="Sprite2D" parent="."]
+texture = ExtResource("2_pj8gm")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.48, 0.36)
+texture = ExtResource("3_opvs4")
+centered = false
