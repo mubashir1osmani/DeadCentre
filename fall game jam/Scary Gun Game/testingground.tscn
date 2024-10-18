@@ -52,6 +52,7 @@ texture = ExtResource("6_divug")
 centered = false
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 autostart = true
 
 [node name="PlayerManager" parent="." instance=ExtResource("4_b2krr")]
