@@ -40,10 +40,6 @@ scale = Vector2(0.48, 0.33006)
 texture = ExtResource("5_o1rma")
 centered = false
 
-[node name="BadGuy" parent="." instance=ExtResource("3_fx77t")]
-z_index = 35
-z_as_relative = false
-
 [node name="Shelf" type="Sprite2D" parent="."]
 z_index = 40
 z_as_relative = false
@@ -51,8 +47,11 @@ scale = Vector2(0.48, 0.36)
 texture = ExtResource("6_divug")
 centered = false
 
+[node name="BadGuy" parent="." instance=ExtResource("3_fx77t")]
+z_index = 35
+z_as_relative = false
+
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
 autostart = true
 
 [node name="PlayerManager" parent="." instance=ExtResource("4_b2krr")]

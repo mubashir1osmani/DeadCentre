@@ -6,16 +6,14 @@ var direction = 1  # 1 for original direction, -1 for turned around
 var target_position = null  # for behaviors 2, 3, 4, and 5
 var animation_sets = ["DangerTarget", "MediumTarget", "RareTarget", "EasyTarget"]
 var is_paused = false  # Variable to track if the movement is paused
-var target_type
+@export var target_type: String = ""
 var clicked_on_target 
 
 func _ready():
 	set_process_input(true)
 	
-	
-	# Randomize the animation set on spawn
-	target_type = animation_sets[randi() % animation_sets.size()]
-	$AnimatedSprite2D.play(target_type)
+	if target_type != "":
+		$AnimatedSprite2D.play(target_type)
 
 	if target_type == "EasyTarget":
 		movement_type = randi() % 4  # Movement types 0-3
