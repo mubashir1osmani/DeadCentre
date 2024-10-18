@@ -1,17 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://doqvupgemct5y"]
+[gd_scene load_steps=9 format=3 uid="uid://doqvupgemct5y"]
 
 [ext_resource type="Script" path="res://testingground.gd" id="1_28gsk"]
+[ext_resource type="Texture2D" uid="uid://my5l840gfv7o" path="res://Assets/Last.PNG" id="3_8pnfu"]
 [ext_resource type="PackedScene" uid="uid://b7cg1vu48eirk" path="res://badguy.tscn" id="3_fx77t"]
 [ext_resource type="PackedScene" uid="uid://bjiorylmdcw2r" path="res://playermanager.tscn" id="4_b2krr"]
+[ext_resource type="Texture2D" uid="uid://c7l0osei2puex" path="res://Assets/Back.PNG" id="4_e3eqp"]
+[ext_resource type="Texture2D" uid="uid://bvdtmj2mrret7" path="res://Assets/Middle.PNG" id="4_l81gu"]
+[ext_resource type="Texture2D" uid="uid://blu1qe5hoio8n" path="res://Assets/Front.PNG" id="5_o1rma"]
+[ext_resource type="Texture2D" uid="uid://d2wwu3ssrvgsi" path="res://Assets/Shelf.PNG" id="6_divug"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_28gsk")
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.48, 0.36)
+texture = ExtResource("4_e3eqp")
+centered = false
+
+[node name="BackPanel" type="Sprite2D" parent="."]
+scale = Vector2(0.48, 0.36)
+texture = ExtResource("3_8pnfu")
+centered = false
+
+[node name="MiddlePanel" type="Sprite2D" parent="."]
+scale = Vector2(0.48, 0.36)
+texture = ExtResource("4_l81gu")
+centered = false
+
+[node name="FrontPanel" type="Sprite2D" parent="."]
+scale = Vector2(0.48, 0.36)
+texture = ExtResource("5_o1rma")
+centered = false
 
 [node name="BadGuy" parent="." instance=ExtResource("3_fx77t")]
 
+[node name="Shelf" type="Sprite2D" parent="."]
+z_index = 10
+z_as_relative = false
+scale = Vector2(0.48, 0.36)
+texture = ExtResource("6_divug")
+centered = false
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [node name="PlayerManager" parent="." instance=ExtResource("4_b2krr")]
+z_index = 20
+position = Vector2(233, 919)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
