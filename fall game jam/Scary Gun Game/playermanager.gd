@@ -16,6 +16,8 @@ func add_points(points):
 
 func change_lives(lives_mod):
 	lives += lives_mod
+	if lives > 100:
+		lives = 100
 	$LivesLabel.text = "Sanity: %d" % lives
 
 func change_combo(combo_mod):
@@ -31,6 +33,9 @@ func change_combo(combo_mod):
 		hp_bonus = 0
 		
 	lives += hp_bonus
+	if lives > 100:
+		lives = 100
+	
 	$LivesLabel.text = "Sanity: %d" % lives
 	$ComboLabel.text = "Combo: %d" % combo
 
