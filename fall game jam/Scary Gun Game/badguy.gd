@@ -7,6 +7,7 @@ var target_position = null  # for behaviors 2, 3, 4, and 5
 var animation_sets = ["DangerTarget", "MediumTarget", "RareTarget", "EasyTarget"]
 var is_paused = false  # Variable to track if the movement is paused
 var target_type
+var clicked_on_target 
 
 func _ready():
 	set_process_input(true)
@@ -106,12 +107,16 @@ func _input_event(_viewport, event, _shape_idx):
 			match target_type:
 				"EasyTarget":
 					get_tree().call_group("score", "add_points", 1)
+					get_tree().call_group("score", "change_combo", 1)
 				"MediumTarget":
 					get_tree().call_group("score", "add_points", 2)
+					get_tree().call_group("score", "change_combo", 1)
 				"DangerTarget":
 					get_tree().call_group("score", "add_points", 3)
+					get_tree().call_group("score", "change_combo", 1)
 				"RareTarget":
 					get_tree().call_group("score", "add_points", 10)
+					get_tree().call_group("score", "change_combo", 1)
 
 			
 			queue_free()  # Remove the target once it's shot
@@ -210,8 +215,12 @@ func _process(delta):
 	
 	# Remove enemy if it leaves the screen
 	if position.x < -sprite_width or position.x > get_viewport_rect().size.x + sprite_width or position.y < -sprite_height or position.y > get_viewport_rect().size.y + sprite_height:
+		if target_type == "MediumTarget":
+			get_tree().call_group("score", "drop_combo")
 		if target_type == "DangerTarget":
 			get_tree().call_group("score", "change_lives", -15)
+			get_tree().call_group("score", "drop_combo")
+		
 		queue_free()
 
 """
