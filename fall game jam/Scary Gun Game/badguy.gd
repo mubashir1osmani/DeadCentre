@@ -6,9 +6,20 @@ var direction = 1  # 1 for original direction, -1 for turned around
 var target_position = null  # for behaviors 2, 3, 4, and 5
 var animation_sets = ["DangerTarget", "MediumTarget", "RareTarget", "EasyTarget"]
 var is_paused = false  # Variable to track if the movement is paused
+<<<<<<< HEAD
 
 func _ready():
 	set_process_input(true)
+=======
+@export var target_type: String = ""
+var clicked_on_target 
+
+func _ready():
+	set_process_input(true)
+	
+	if target_type != "":
+		$AnimatedSprite2D.play(target_type)
+>>>>>>> refs/remotes/origin/main
 
 	# Randomize the animation set on spawn
 	var random_animation = animation_sets[randi() % animation_sets.size()]
