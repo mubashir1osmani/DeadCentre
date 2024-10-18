@@ -55,8 +55,8 @@ z_as_relative = false
 autostart = true
 
 [node name="PlayerManager" parent="." instance=ExtResource("4_b2krr")]
-z_index = 100
+z_index = 50
 z_as_relative = false
-position = Vector2(187, 907)
+position = Vector2(233, 919)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

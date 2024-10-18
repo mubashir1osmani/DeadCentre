@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhw4r8ki21djv"]
+
+[ext_resource type="Script" path="res://playermanager.gd" id="1_ktasq"]
+
+[node name="PlayerManager" type="Node2D" groups=["score"]]
+script = ExtResource("1_ktasq")
+
+[node name="ScoreLabel" type="Label" parent="." groups=["score"]]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "SCORE HERE"
+
+[node name="LivesLabel" type="Label" parent="." groups=["score"]]
+offset_top = 24.0
+offset_right = 86.0
+offset_bottom = 47.0
+text = "LIVES HERE"
+
+[node name="ComboLabel" type="Label" parent="." groups=["score"]]
+offset_top = 48.0
+offset_right = 40.0
+offset_bottom = 71.0
+text = "COMBO HERE"
