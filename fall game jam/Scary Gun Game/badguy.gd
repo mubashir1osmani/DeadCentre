@@ -6,24 +6,16 @@ var direction = 1  # 1 for original direction, -1 for turned around
 var target_position = null  # for behaviors 2, 3, 4, and 5
 var animation_sets = ["DangerTarget", "MediumTarget", "RareTarget", "EasyTarget"]
 var is_paused = false  # Variable to track if the movement is paused
-var target_type
-var clicked_on_target 
 
 func _ready():
 	set_process_input(true)
-	
-	
-	# Randomize the animation set on spawn
-	target_type = animation_sets[randi() % animation_sets.size()]
-	$AnimatedSprite2D.play(target_type)
 
-	if target_type == "EasyTarget":
-		movement_type = randi() % 4  # Movement types 0-3
-		print("Spawning an EasyTarget")
-	elif target_type != "EasyTarget":  # Ensures we spawn non-EasyTargets (Medium, Rare)
-		movement_type = 4 + randi() % 8  # Movement types 4-11
-		print("Spawning a not EasyTarget")
-		
+	# Randomize the animation set on spawn
+	var random_animation = animation_sets[randi() % animation_sets.size()]
+	$AnimatedSprite2D.play(random_animation)
+
+	random_animation = "EasyTarget"
+	movement_type = randi() % 12 # Set the new movement type here
 
 	# Set spawn points based on movement type
 	match movement_type:
@@ -50,35 +42,35 @@ func _ready():
 		4:  # Left to right
 			position = Vector2(0, 730)
 			z_index = 35
-			speed = 550
+			speed = 450
 		5:  # Left to right
 			position = Vector2(0, 530)
 			z_index = 25
-			speed = 475
+			speed = 400
 		6:  # Left to right
 			position = Vector2(0, 250)
 			z_index = 15
-			speed = 400
+			speed = 350
 		7:  # Left to right
 			position = Vector2(0, 100)
 			z_index = 5
-			speed = 325
+			speed = 300
 		8:  # Left to right
 			position = Vector2(get_viewport_rect().size.x, 730)
 			z_index = 35
-			speed = -550
+			speed = -450
 		9:  # Left to right
 			position = Vector2(get_viewport_rect().size.x, 530)
 			z_index = 25
-			speed = -475
+			speed = -400
 		10:  # Left to right
 			position = Vector2(get_viewport_rect().size.x, 250)
 			z_index = 15
-			speed = -400
+			speed = -350
 		11:  # Left to right
 			position = Vector2(get_viewport_rect().size.x, 100)
 			z_index = 5
-			speed = -325
+			speed = -300
 """
 		5:  # Right to left
 			position = Vector2(get_viewport_rect().size.x, get_random_height())
@@ -102,25 +94,8 @@ func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			print("BANG!")
-			
-			# Check the type of target and add corresponding points
-			match target_type:
-				"EasyTarget":
-					get_tree().call_group("score", "add_points", 1)
-					get_tree().call_group("score", "change_combo", 1)
-				"MediumTarget":
-					get_tree().call_group("score", "add_points", 2)
-					get_tree().call_group("score", "change_combo", 1)
-				"DangerTarget":
-					get_tree().call_group("score", "add_points", 3)
-					get_tree().call_group("score", "change_combo", 1)
-				"RareTarget":
-					get_tree().call_group("score", "add_points", 10)
-					get_tree().call_group("score", "change_combo", 1)
-
-			
-			queue_free()  # Remove the target once it's shot
-
+			get_tree().call_group("score", "add_points", 1)
+			queue_free()
 
 func _process(delta):
 	# Don't process movement if paused
@@ -215,20 +190,12 @@ func _process(delta):
 	
 	# Remove enemy if it leaves the screen
 	if position.x < -sprite_width or position.x > get_viewport_rect().size.x + sprite_width or position.y < -sprite_height or position.y > get_viewport_rect().size.y + sprite_height:
-		if target_type == "MediumTarget":
-			get_tree().call_group("score", "drop_combo")
-		if target_type == "DangerTarget":
-			get_tree().call_group("score", "change_lives", -15)
-			get_tree().call_group("score", "drop_combo")
-		
 		queue_free()
 
-"""
 func _on_attack_timer_timeout():
 	print("AGONY!!!")
 	get_tree().call_group("score", "change_lives", -1)
-	queue_free()
-"""
+	#queue_free()
 
 # Timer callback to resume movement after 2 seconds
 func _on_easy_target_stall_timeout():

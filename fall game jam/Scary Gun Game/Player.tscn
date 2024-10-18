@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://7insj7djen5l"]
+
+[ext_resource type="PackedScene" uid="uid://b7cg1vu48eirk" path="res://badguy.tscn" id="2_lahjr"]
+
+[sub_resource type="GDScript" id="GDScript_8mtb2"]
+script/source = "extends Node
+
+#extends KinematicBody2D
+
+const SPEED = 200
+
+var velocity = Vector2.ZERO
+var health = 100
+
+#
+#func _ready() -> void:
+	#pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta):
+	velocity.x = 0
+	velocity.y = 0
+	
+	if Input.is_action_pressed(\"ui_right\"):
+		velocity.x += SPEED
+	elif Input.is_action_pressed(\"ui_left\"):
+		velocity.x -= SPEED
+		
+	if Input.is_action_pressed(\"ui_up\"):
+		velocity.y -= SPEED
+	elif Input.is_action_pressed(\"ui_down\"):
+		velocity.y += SPEED
+	
+"
+
+[node name="Player" type="CharacterBody2D"]
+script = SubResource("GDScript_8mtb2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Node2D" parent="." instance=ExtResource("2_lahjr")]
+position = Vector2(286, 209)
