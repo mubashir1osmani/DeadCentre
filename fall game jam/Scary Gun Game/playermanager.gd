@@ -2,11 +2,11 @@
 extends Node2D
 
 var score = 0
-var lives = 3
+var lives = 100
 
 func _ready():
 	$ScoreLabel.text = "Score: %d" % score
-	$LivesLabel.text = "Lives: %d" % lives
+	$LivesLabel.text = "Sanity: %d" % lives
 
 func add_points(points):
 	score += points
@@ -14,4 +14,4 @@ func add_points(points):
 
 func change_lives(lives_mod):
 	lives += lives_mod
-	$LivesLabel.text = "Lives: %d" % lives
+	$LivesLabel.text = "Sanity: %d" % lives
