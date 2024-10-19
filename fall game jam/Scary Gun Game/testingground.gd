@@ -4,6 +4,7 @@ var target_pool = []
 var current_index = 0
 var can_click
 
+@onready var inv: Inv = preload("res://Inventory/playerinv.tres")
 
 # Function to initialize the target pool
 func _ready():
@@ -22,6 +23,18 @@ func _ready():
 	# Shuffle the pool to randomize the order
 	target_pool.shuffle()
 
+
+func getLives():
+	return inv.Items[6].lives
+
+func setLives(l):
+	inv.Items[6].lives = l
+	
+func getTickets():
+	return inv.Items[7].tickets
+	
+func setTickets(t):
+	inv.Items[7].tickets = t
 
 func spawn_bad_guy(target_type):
 	var bad_guy_scene = preload("res://badguy.tscn")

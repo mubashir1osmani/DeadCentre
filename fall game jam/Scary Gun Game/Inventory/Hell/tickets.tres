@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=2 format=3 uid="uid://cy1dl50hu5xk"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_es1dc"]
+
+[resource]
+script = ExtResource("1_es1dc")
+name = "tickets"
+bought = false
+lives = 0
+tickets = 0
