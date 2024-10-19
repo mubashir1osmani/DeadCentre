@@ -7,6 +7,8 @@ var score = 0
 var lives = 100
 var combo = 0
 var hp_bonus
+var level = 0
+
 
 func _ready():
 	$ScoreLabel.text = "Tickets: %d" % score
@@ -45,5 +47,22 @@ func change_combo(combo_mod):
 func drop_combo():
 	combo = 0
 	$ComboLabel.text = "Combo: %d" % combo
+	
+func set_level(x):
+	level = x
+
+func go_to_level(x):
+	if level == 0:
+		get_tree().change_scene_to_file("res://ui/Main Menu.tscn")
+	if level == 1:
+		get_tree().change_scene_to_file("res://testingground.tscn")
+	if level == 2:
+		get_tree().change_scene_to_file("res://shop.tscn")
+	if level == 3:
+		get_tree().change_scene_to_file("res://round2.tscn")
+	if level == 4:
+		get_tree().change_scene_to_file("res://shop.tscn")
+	if level == 5:
+		get_tree().change_scene_to_file("res://round3.tscn")
 	
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dx6nups4sgv7r"]
+[gd_scene load_steps=8 format=3 uid="uid://c2rcvhfmq2bkf"]
 
 [ext_resource type="Texture2D" uid="uid://d3fyvlmvs3kyx" path="res://Assets/GAME-R3HellBG.png" id="1_aokys"]
 [ext_resource type="Script" path="res://round_3.gd" id="1_nef1n"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dhw4r8ki21djv" path="res://playermanager.tscn" id="5_obvyn"]
 [ext_resource type="PackedScene" uid="uid://bk33mu5k7qv4v" path="res://Inventory/inventory_ui.tscn" id="7_sskdg"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_nef1n")
 
 [node name="Hell" type="Sprite2D" parent="."]
@@ -30,7 +30,7 @@ centered = false
 
 [node name="Area2D" parent="." instance=ExtResource("4_4k23v")]
 
-[node name="PlayerManager" parent="." instance=ExtResource("5_obvyn")]
+[node name="PlayerManager" parent="." groups=["score"] instance=ExtResource("5_obvyn")]
 inv = null
 
 [node name="Timer" type="Timer" parent="."]

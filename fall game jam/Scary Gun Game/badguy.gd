@@ -16,10 +16,8 @@ func _ready():
 
 	if target_type == "EasyTarget":
 		movement_type = randi() % 4  # Movement types 0-3
-		print("Spawning an EasyTarget")
 	elif target_type != "EasyTarget":  # Ensures we spawn non-EasyTargets (Medium, Rare)
 		movement_type = 4 + randi() % 8  # Movement types 4-11
-		print("Spawning a not EasyTarget")
 		
 
 	# Set spawn points based on movement type
@@ -98,9 +96,6 @@ func _ready():
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			print("BANG!")
-			
-			# Check the type of target and add corresponding points
 			match target_type:
 				"EasyTarget":
 					get_tree().call_group("player", "add_points", 1)
@@ -177,33 +172,6 @@ func _process(delta):
 			position.x += speed * delta
 		11:  # move from left to right
 			position.x += speed * delta
-			"""
-		5:  # move from right to left
-			position.x += speed * delta
-		6:  # move from left to middle, then turn around to the right
-			if direction == 1 and position.x < target_position:
-				position.x += speed * delta
-			elif direction == 1:
-				direction = -1  # Reached the middle, change direction to left
-			elif direction == -1:
-				position.x -= speed * delta
-		7:  # move from right to middle, then turn around to the left
-			if direction == 1 and position.x > target_position:
-				position.x += speed * delta
-			elif direction == 1:
-				direction = -1  # Reached the middle, change direction to right
-			elif direction == -1:
-				position.x -= speed * delta
-		8:  # move from top to middle, then stop, and turn back
-			if direction == 1 and position.y < target_position:
-				position.y += speed * delta
-			elif direction == 1:  # Reached the middle
-				$EasyTargetStall.start()  # Start the EasyTargetStall timer and pause movement
-				is_paused = true
-				direction = -1
-			elif direction == -1:
-				position.y -= speed * delta
-			"""
 
 	# Get the size of the current frame of the AnimatedSprite2D
 	var sprite = $Sprite2D
@@ -219,13 +187,6 @@ func _process(delta):
 			get_tree().call_group("player", "drop_combo")
 		
 		queue_free()
-
-"""
-func _on_attack_timer_timeout():
-	print("AGONY!!!")
-	get_tree().call_group("player", "change_lives", -1)
-	queue_free()
-"""
 
 # Timer callback to resume movement after 2 seconds
 func _on_easy_target_stall_timeout():

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlp81m4brabic"]
 
-[ext_resource type="Script" path="res://ui/main_menu.gd" id="1_ugk5y"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_ugk5y"]
 [ext_resource type="FontFile" uid="uid://njywc33hyf43" path="res://Assets/fonts/Wooden Log.ttf" id="2_4wx0p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e67we"]

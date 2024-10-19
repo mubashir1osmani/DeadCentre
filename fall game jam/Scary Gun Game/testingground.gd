@@ -2,9 +2,14 @@ extends Node2D
 
 var target_pool = []
 var current_index = 0
+var can_click
+
 
 # Function to initialize the target pool
 func _ready():
+	$NextButton.visible = false
+	$NextButtonArea/NextButtonCollision.disabled = true
+	
 	# Fill the pool with the specified targets
 	for _i in range(35):
 		target_pool.append("EasyTarget")
@@ -16,6 +21,7 @@ func _ready():
 
 	# Shuffle the pool to randomize the order
 	target_pool.shuffle()
+
 
 func spawn_bad_guy(target_type):
 	var bad_guy_scene = preload("res://badguy.tscn")
@@ -34,3 +40,16 @@ func _on_timer_timeout():
 		current_index += 1  # Move to the next target in the pool
 	else:
 		print("All targets have been spawned!")
+
+
+func _on_level_timer_timeout():
+	print("LEVEL OVER!")
+	$NextButton.visible = true
+	$NextButtonArea/NextButtonCollision.disabled = false
+
+
+func _on_next_button_area_input_event(viewport, event, shape_idx):
+	# Check if the left mouse button is clicked
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		print("Next button clicked!")
+		get_tree().change_scene_to_file("res://Assets/shop.tscn")

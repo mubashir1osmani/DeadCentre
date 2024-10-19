@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://doqvupgemct5y"]
+[gd_scene load_steps=12 format=3 uid="uid://doqvupgemct5y"]
 
 [ext_resource type="Script" path="res://testingground.gd" id="1_28gsk"]
 [ext_resource type="Texture2D" uid="uid://my5l840gfv7o" path="res://Assets/Last.PNG" id="3_8pnfu"]
@@ -10,8 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://d2wwu3ssrvgsi" path="res://Assets/Shelf.PNG" id="6_divug"]
 [ext_resource type="Texture2D" uid="uid://bbugdidowy5xi" path="res://PauseBut.PNG" id="9_681y8"]
 [ext_resource type="Script" path="res://pause.gd" id="10_bh5f5"]
+[ext_resource type="Texture2D" uid="uid://45rx21u4rshq" path="res://Assets/NextBut.PNG" id="11_3rhbn"]
 
-[node name="Node2D2" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 script = ExtResource("1_28gsk")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -68,4 +69,27 @@ scale = Vector2(0.138158, 0.138158)
 texture = ExtResource("9_681y8")
 script = ExtResource("10_bh5f5")
 
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="NextButton" type="Sprite2D" parent="."]
+z_index = 200
+position = Vector2(1750, 540)
+scale = Vector2(0.237304, 0.19884)
+texture = ExtResource("11_3rhbn")
+
+[node name="NextButtonArea" type="Area2D" parent="." groups=["score"]]
+z_index = 100
+position = Vector2(1750, 540)
+scale = Vector2(0.237304, 0.19884)
+
+[node name="NextButtonCollision" type="CollisionPolygon2D" parent="NextButtonArea"]
+z_index = 101
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-488.824, -452.626, -400.33, -462.685, 442.47, -80.467, 493.038, -20.1167, 493.038, 10.0583, -471.968, 447.597, -497.251, 437.539)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
+[connection signal="input_event" from="NextButtonArea" to="." method="_on_next_button_area_input_event"]
