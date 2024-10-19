@@ -74,4 +74,8 @@ shape = SubResource("CircleShape2D_nmpuh")
 [node name="EasyTargetStall" type="Timer" parent="."]
 one_shot = true
 
+[node name="MediumTargetStall" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="EasyTargetStall" to="." method="_on_easy_target_stall_timeout"]
+[connection signal="timeout" from="MediumTargetStall" to="." method="_on_medium_target_stall_timeout"]

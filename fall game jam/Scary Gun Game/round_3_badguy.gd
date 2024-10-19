@@ -26,16 +26,19 @@ func _ready():
 	$HazardTargetCollision.disabled = true
 	$RareTargetCollision.disabled = true
 	$ButterflyCollision.disabled = true
+	$MediumDimensions.disabled = true
+	$HazardDimensions.disabled = true
 	
 	if target_type == "EasyTarget":
 		movement_type = 0  # Movement types 0
 		$EasyDemon.visible = true
 		$EasyTargetCollision.disabled = false
+	elif target_type == "MediumTarget":
+		movement_type = 9 + randi() % 2
+		$MediumDemon.visible = true
+		$MediumTargetCollision.disabled = false
 	elif target_type != "EasyTarget":  # Ensures we spawn non-EasyTargets (Medium, Rare)
 		movement_type = 1 + randi() % 8  # Movement types 1-8
-		if target_type == "MediumTarget":
-			$MediumDemon.visible = true
-			$MediumTargetCollision.disabled = false
 		if target_type == "DangerTarget":
 			$HazardDemon.visible = true
 			$HazardTargetCollision.disabled = false
@@ -56,40 +59,50 @@ func _ready():
 			target_position = position.y + (100 + randi() % 550)
 		1:  # Left to right
 			position = Vector2(0, 300 + randi() % 500)
-			z_index = 35
-			speed = 700
+			z_index = 4
+			speed = 800
 		2:  # Left to right
 			position = Vector2(0, 300 + randi() % 500)
-			z_index = 25
-			speed = 475
+			z_index = 4
+			speed = 700
 		3:  # Left to right
 			position = Vector2(0, 300 + randi() % 500)
-			z_index = 15
-			speed = 400
+			z_index = 4
+			speed = 600
 		4:  # Left to right
 			position = Vector2(0, 300 + randi() % 500)
-			z_index = 5
-			speed = 325
+			z_index = 4
+			speed = 500
 		5:  # Left to right
 			position = Vector2(get_viewport_rect().size.x, 300 + randi() % 500)
 			initial_y_position = position.y
-			z_index = 35
-			speed = -700
+			z_index = 4
+			speed = -800
 		6:  # Left to right
 			position = Vector2(get_viewport_rect().size.x, 300 + randi() % 500)
 			initial_y_position = position.y
-			z_index = 25
-			speed = -475
+			z_index = 4
+			speed = -700
 		7:  # Left to right
 			position = Vector2(get_viewport_rect().size.x, 300 + randi() % 500)
 			initial_y_position = position.y
-			z_index = 15
-			speed = -400
+			z_index = 4
+			speed = -600
 		8:  # Left to right with oscillation (new behavior)
 			position = Vector2(get_viewport_rect().size.x, 300 + randi() % 500)  # Random starting Y position
 			initial_y_position = position.y  # Store initial Y position for the oscillation
+			z_index = 4
+			speed = -500
+		9: # left stop right
+			position = Vector2(0, 700)
+			target_position = 1060 + (randi() % 760)
 			z_index = 5
-			speed = -325
+			speed = 10000
+		10: # right stop left
+			position = Vector2(get_viewport_rect().size.x, 700)
+			target_position = 100 + (randi() % 760)
+			z_index = 5
+			speed = -10000
 	
 	#Set the initial_y_position for the oscillation
 	initial_y_position = position.y
@@ -187,33 +200,25 @@ func _process(delta):
 		8:  # move from left to right
 			position.x += speed * delta
 			position.y = initial_y_position + oscillation_amplitude * sin(oscillation_speed * time_elapsed)
-			"""
-		5:  # move from right to left
-			position.x += speed * delta
-		6:  # move from left to middle, then turn around to the right
+		9:  # move from left to middle, then turn around to the right
 			if direction == 1 and position.x < target_position:
 				position.x += speed * delta
 			elif direction == 1:
+				$MediumTargetStall.start()
+				is_paused = true
 				direction = -1  # Reached the middle, change direction to left
 			elif direction == -1:
 				position.x -= speed * delta
-		7:  # move from right to middle, then turn around to the left
+		10:  # move from right to middle, then turn around to the left
 			if direction == 1 and position.x > target_position:
 				position.x += speed * delta
 			elif direction == 1:
+				$MediumTargetStall.start()
+				is_paused = true
 				direction = -1  # Reached the middle, change direction to right
 			elif direction == -1:
 				position.x -= speed * delta
-		8:  # move from top to middle, then stop, and turn back
-			if direction == 1 and position.y < target_position:
-				position.y += speed * delta
-			elif direction == 1:  # Reached the middle
-				$EasyTargetStall.start()  # Start the EasyTargetStall timer and pause movement
-				is_paused = true
-				direction = -1
-			elif direction == -1:
-				position.y -= speed * delta
-			"""
+
 
 	# Get the size of the current frame of the Sprite2D
 	var sprite = null
@@ -260,3 +265,7 @@ func _process(delta):
 # Timer callback to resume movement after 3 seconds
 func _on_easy_target_stall_timeout():
 	is_paused = false
+
+
+func _on_medium_target_stall_timeout():
+	is_paused = false # Replace with function body.
