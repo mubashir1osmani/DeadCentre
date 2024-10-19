@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://desp02ebl4suf"]
+
+[ext_resource type="FontFile" uid="uid://njywc33hyf43" path="res://Assets/fonts/Wooden Log.ttf" id="1_flwfg"]
+[ext_resource type="Script" path="res://gameover.gd" id="1_r7n1k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ggylv"]
+font = ExtResource("1_flwfg")
+font_size = 29
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.153064, 0.0892052, 0.0967897, 0)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r7n1k")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1910.0
+offset_bottom = 1072.0
+color = Color(0.52, 0.24128, 0.1716, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 258.0
+offset_right = 571.0
+offset_bottom = 288.0
+scale = Vector2(7.68, 7.68)
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_ggylv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.0
+offset_top = 59.0
+offset_right = 141.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Retry" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "RETRY"
+
+[node name="Quit" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "QUIT"

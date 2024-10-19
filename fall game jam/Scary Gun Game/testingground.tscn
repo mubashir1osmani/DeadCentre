@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://doqvupgemct5y"]
+[gd_scene load_steps=11 format=3 uid="uid://doqvupgemct5y"]
 
 [ext_resource type="Script" path="res://testingground.gd" id="1_28gsk"]
 [ext_resource type="Texture2D" uid="uid://my5l840gfv7o" path="res://Assets/Last.PNG" id="3_8pnfu"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bvdtmj2mrret7" path="res://Assets/Middle.PNG" id="4_l81gu"]
 [ext_resource type="Texture2D" uid="uid://blu1qe5hoio8n" path="res://Assets/Front.PNG" id="5_o1rma"]
 [ext_resource type="Texture2D" uid="uid://d2wwu3ssrvgsi" path="res://Assets/Shelf.PNG" id="6_divug"]
+[ext_resource type="Texture2D" uid="uid://bbugdidowy5xi" path="res://PauseBut.PNG" id="9_681y8"]
+[ext_resource type="Script" path="res://pause.gd" id="10_bh5f5"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_28gsk")
@@ -58,6 +60,12 @@ autostart = true
 [node name="PlayerManager" parent="." instance=ExtResource("4_b2krr")]
 z_index = 100
 z_as_relative = false
-position = Vector2(187, 907)
+position = Vector2(74, 38)
+
+[node name="PauseBut" type="Sprite2D" parent="."]
+position = Vector2(1753, 90)
+scale = Vector2(0.138158, 0.138158)
+texture = ExtResource("9_681y8")
+script = ExtResource("10_bh5f5")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

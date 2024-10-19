@@ -15,3 +15,7 @@ func add_points(points):
 func change_lives(lives_mod):
 	lives += lives_mod
 	$LivesLabel.text = "Sanity: %d" % lives
+
+func death():
+	if lives == 0:
+		get_tree().change_scene_to_file("res://gameover.tscn")

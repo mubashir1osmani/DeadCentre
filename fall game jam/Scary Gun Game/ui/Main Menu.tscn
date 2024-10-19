@@ -76,7 +76,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 10
 theme_override_fonts/font = ExtResource("2_4wx0p")
 theme_override_font_sizes/font_size = 90
-text = "DEATH CENTER"
+text = "DEATH CENTRE"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_options_pressed"]

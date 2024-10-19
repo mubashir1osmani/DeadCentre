@@ -1,0 +1,168 @@
+[gd_scene load_steps=16 format=3 uid="uid://b6jlh6f22ddsy"]
+
+[ext_resource type="Texture2D" uid="uid://djl4pjegbti50" path="res://Assets/shop/ShopBackground.PNG" id="1_jiueg"]
+[ext_resource type="Texture2D" uid="uid://d2exhx1hklcpu" path="res://Assets/shop/TicketBox.PNG" id="2_63wpk"]
+[ext_resource type="Texture2D" uid="uid://dfdgv8dgrol8s" path="res://Assets/shop/shopitems/PriceTag.PNG" id="2_tdpjn"]
+[ext_resource type="Texture2D" uid="uid://dvnycspfoldox" path="res://Assets/shop/shopitems/3DGlassess.PNG" id="3_lmwnv"]
+[ext_resource type="Texture2D" uid="uid://to8wnbagk50m" path="res://Assets/shop/shopitems/Candy.PNG" id="4_sq1k3"]
+[ext_resource type="Texture2D" uid="uid://bk23mphtg4ydm" path="res://Assets/shop/shopitems/IceCube.PNG" id="5_2eec6"]
+[ext_resource type="Texture2D" uid="uid://bw4pg4efsn3h2" path="res://Assets/shop/shopitems/Magazine.PNG" id="6_d0eg6"]
+[ext_resource type="Texture2D" uid="uid://curielsd8cb20" path="res://Assets/shop/shopitems/Pillow.PNG" id="7_14sq5"]
+[ext_resource type="Texture2D" uid="uid://ctbjvjunhjtb1" path="res://Assets/shop/shopitems/Pills.PNG" id="8_l316m"]
+[ext_resource type="Texture2D" uid="uid://757x3it3ajbq" path="res://EyeSwirl_3.png" id="10_qbbg3"]
+[ext_resource type="Texture2D" uid="uid://hjn2enim3rma" path="res://EyeSwirl_1.png" id="11_x5eyj"]
+[ext_resource type="Texture2D" uid="uid://be6fur3n0ns37" path="res://EyeSwirl_2.png" id="12_5pgss"]
+
+[sub_resource type="Animation" id="Animation_tl8dj"]
+resource_name = "eyes"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EyeSwirl1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EyeSwirl2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EyeSwirl3:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_738xb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EyeSwirl1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_syr4i"]
+_data = {
+"RESET": SubResource("Animation_738xb"),
+"eyes": SubResource("Animation_tl8dj")
+}
+
+[node name="Shop" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(976.5, 547.076)
+scale = Vector2(0.48925, 0.363283)
+texture = ExtResource("1_jiueg")
+
+[node name="PriceTag" type="Sprite2D" parent="."]
+position = Vector2(743, 618)
+scale = Vector2(0.0880828, 0.0880828)
+texture = ExtResource("2_tdpjn")
+
+[node name="PriceTag2" type="Sprite2D" parent="."]
+position = Vector2(974, 618.054)
+scale = Vector2(0.0846286, 0.0846286)
+texture = ExtResource("2_tdpjn")
+
+[node name="PriceTag3" type="Sprite2D" parent="."]
+position = Vector2(1254, 618)
+scale = Vector2(0.0811744, 0.0811744)
+texture = ExtResource("2_tdpjn")
+
+[node name="PriceTag4" type="Sprite2D" parent="."]
+position = Vector2(1240, 902)
+scale = Vector2(0.0690846, 0.0690846)
+texture = ExtResource("2_tdpjn")
+
+[node name="PriceTag5" type="Sprite2D" parent="."]
+position = Vector2(991, 902)
+scale = Vector2(0.0690846, 0.0690846)
+texture = ExtResource("2_tdpjn")
+
+[node name="PriceTag6" type="Sprite2D" parent="."]
+position = Vector2(746, 892)
+scale = Vector2(0.0690846, 0.0690846)
+texture = ExtResource("2_tdpjn")
+
+[node name="TicketBox" type="Sprite2D" parent="."]
+position = Vector2(419, 304)
+scale = Vector2(0.136465, 0.136465)
+texture = ExtResource("2_63wpk")
+
+[node name="3DGlasses" type="Sprite2D" parent="."]
+position = Vector2(690, 558)
+scale = Vector2(0.200743, 0.200743)
+texture = ExtResource("3_lmwnv")
+
+[node name="Candy" type="Sprite2D" parent="."]
+position = Vector2(948, 558)
+scale = Vector2(0.126453, 0.126453)
+texture = ExtResource("4_sq1k3")
+
+[node name="IceCube" type="Sprite2D" parent="."]
+position = Vector2(1222, 560)
+scale = Vector2(0.130141, 0.130141)
+texture = ExtResource("5_2eec6")
+
+[node name="Magazine" type="Sprite2D" parent="."]
+position = Vector2(706, 837)
+scale = Vector2(0.179806, 0.179806)
+texture = ExtResource("6_d0eg6")
+
+[node name="Pillow" type="Sprite2D" parent="."]
+position = Vector2(968, 844)
+scale = Vector2(0.182557, 0.182557)
+texture = ExtResource("7_14sq5")
+
+[node name="Pills" type="Sprite2D" parent="."]
+position = Vector2(1222, 836)
+scale = Vector2(0.158012, 0.158012)
+texture = ExtResource("8_l316m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_syr4i")
+}
+autoplay = "eyes"
+
+[node name="EyeSwirl3" type="Sprite2D" parent="."]
+position = Vector2(987, 278)
+scale = Vector2(0.0736131, 0.0736131)
+texture = ExtResource("10_qbbg3")
+
+[node name="EyeSwirl1" type="Sprite2D" parent="."]
+position = Vector2(988, 280)
+scale = Vector2(0.0668564, 0.0668564)
+texture = ExtResource("11_x5eyj")
+
+[node name="EyeSwirl2" type="Sprite2D" parent="."]
+position = Vector2(983, 279)
+scale = Vector2(0.0707681, 0.0707681)
+texture = ExtResource("12_5pgss")
