@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b13q142k3y80q"]
+[gd_scene load_steps=12 format=3 uid="uid://b13q142k3y80q"]
 
 [ext_resource type="Texture2D" uid="uid://b1dxnuqwhkvbi" path="res://Assets/GAME-R3Green.png" id="1_4j0f7"]
+[ext_resource type="Script" path="res://round_3_badguy.gd" id="1_7mrcu"]
 [ext_resource type="Texture2D" uid="uid://ba7v8o77xud4s" path="res://Assets/GAME-R3Yellow.png" id="2_1yxxd"]
 [ext_resource type="Texture2D" uid="uid://bn3t0u341utdm" path="res://Assets/GAME-R3Red.png" id="3_cadmf"]
 [ext_resource type="Texture2D" uid="uid://bkbqgxjvumr7" path="res://Assets/GAME-R3Purple.png" id="4_0ipq0"]
@@ -22,12 +23,13 @@ size = Vector2(114, 152)
 radius = 36.0
 
 [node name="Area2D" type="Area2D"]
+script = ExtResource("1_7mrcu")
 
 [node name="EasyDemon" type="Sprite2D" parent="."]
 scale = Vector2(0.14475, 0.137167)
 texture = ExtResource("1_4j0f7")
 
-[node name="EasyDimensions" type="CollisionShape2D" parent="."]
+[node name="EasyTargetCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-9, -25.5)
 shape = SubResource("RectangleShape2D_ubdv1")
 
@@ -58,7 +60,7 @@ polygon = PackedVector2Array(-2, -1, -43, -149, 139, -147, 73, 71, -19, 140, -16
 scale = Vector2(0.065, 0.065)
 texture = ExtResource("4_0ipq0")
 
-[node name="RareDimensions" type="CollisionShape2D" parent="."]
+[node name="RareTargetCollision" type="CollisionShape2D" parent="."]
 position = Vector2(1, -2)
 shape = SubResource("RectangleShape2D_71uii")
 
@@ -68,3 +70,8 @@ texture = ExtResource("5_gldx7")
 
 [node name="ButterflyCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nmpuh")
+
+[node name="EasyTargetStall" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="EasyTargetStall" to="." method="_on_easy_target_stall_timeout"]

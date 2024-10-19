@@ -7,13 +7,13 @@ var current_index = 0
 # Function to initialize the target pool
 func _ready():
 	# Fill the pool with the specified targets
-	for _i in range(30):
+	for _i in range(25):
 		target_pool.append("EasyTarget")
-	for _i in range(15):
+	for _i in range(20):
 		target_pool.append("MediumTarget")
-	for _i in range(10):
+	for _i in range(15):
 		target_pool.append("DangerTarget")
-	for _i in range(5):
+	for _i in range(10):
 		target_pool.append("Butterfly")
 	target_pool.append("RareTarget")  # Add the RareTarget
 
@@ -21,7 +21,7 @@ func _ready():
 	target_pool.shuffle()
 
 func spawn_bad_guy(target_type):
-	var bad_guy_scene = preload("res://round2badguy.tscn")
+	var bad_guy_scene = preload("res://round3badguy.tscn")
 	var bad_guy = bad_guy_scene.instantiate()
 	bad_guy.target_type = target_type
 	if target_type != "":

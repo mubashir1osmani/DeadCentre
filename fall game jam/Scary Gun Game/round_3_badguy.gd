@@ -16,11 +16,10 @@ var time_elapsed = 0.0  # Track elapsed time for sinusoidal movement
 func _ready():
 	set_process_input(true)
 	
-	$Spider.visible = false
-	$Web.visible = false
-	$MediumMask.visible = false
-	$HazardMask.visible = false
-	$RareMask.visible = false
+	$EasyDemon.visible = false
+	$MediumDemon.visible = false
+	$HazardDemon.visible = false
+	$RareDemon.visible = false
 	$Butterfly.visible = false
 	$EasyTargetCollision.disabled = true
 	$MediumTargetCollision.disabled = true
@@ -30,19 +29,18 @@ func _ready():
 	
 	if target_type == "EasyTarget":
 		movement_type = 0  # Movement types 0
-		$Spider.visible = true
-		$Web.visible = true
+		$EasyDemon.visible = true
 		$EasyTargetCollision.disabled = false
 	elif target_type != "EasyTarget":  # Ensures we spawn non-EasyTargets (Medium, Rare)
 		movement_type = 1 + randi() % 8  # Movement types 1-8
 		if target_type == "MediumTarget":
-			$MediumMask.visible = true
+			$MediumDemon.visible = true
 			$MediumTargetCollision.disabled = false
 		if target_type == "DangerTarget":
-			$HazardMask.visible = true
+			$HazardDemon.visible = true
 			$HazardTargetCollision.disabled = false
 		if target_type == "RareTarget":
-			$RareMask.visible = true
+			$RareDemon.visible = true
 			$RareTargetCollision.disabled = false
 		if target_type == "Butterfly":
 			$Butterfly.visible = true
@@ -56,31 +54,22 @@ func _ready():
 			z_index = 35
 			speed = 300
 			target_position = position.y + (100 + randi() % 550)
-
 		1:  # Left to right
 			position = Vector2(0, 300 + randi() % 500)
 			z_index = 35
 			speed = 700
-			if target_type == "Butterfly":
-				$Butterfly.flip_h = true
 		2:  # Left to right
 			position = Vector2(0, 300 + randi() % 500)
 			z_index = 25
 			speed = 475
-			if target_type == "Butterfly":
-				$Butterfly.flip_h = true
 		3:  # Left to right
 			position = Vector2(0, 300 + randi() % 500)
 			z_index = 15
 			speed = 400
-			if target_type == "Butterfly":
-				$Butterfly.flip_h = true
 		4:  # Left to right
 			position = Vector2(0, 300 + randi() % 500)
 			z_index = 5
 			speed = 325
-			if target_type == "Butterfly":
-				$Butterfly.flip_h = true
 		5:  # Left to right
 			position = Vector2(get_viewport_rect().size.x, 300 + randi() % 500)
 			initial_y_position = position.y
@@ -234,25 +223,26 @@ func _process(delta):
 		target_type = "EasyTarget"
 	match target_type:
 		"EasyTarget":
-			sprite = $Spider
+			sprite = $EasyDemon
 			sprite_width = $EasyTargetCollision.shape.get_rect().size.x
 			sprite_height = $EasyTargetCollision.shape.get_rect().size.y
 		"MediumTarget":
-			sprite = $MediumMask
-			sprite_width = $MediumTargetCollision.shape.get_rect().size.x
-			sprite_height = $MediumTargetCollision.shape.get_rect().size.y
+			sprite = $MediumDemon
+			sprite_width = $MediumDimensions.shape.get_rect().size.x
+			sprite_height = $MediumDimensions.shape.get_rect().size.y
 		"DangerTarget":
-			sprite = $HazardMask
-			sprite_width = $HazardTargetCollision.shape.get_rect().size.x
-			sprite_height = $HazardTargetCollision.shape.get_rect().size.y
+			sprite = $HazardDemon
+			sprite_width = $HazardDimensions.shape.get_rect().size.x
+			sprite_height = $HazardDimensions.shape.get_rect().size.y
 		"RareTarget":
-			sprite = $RareMask
+			sprite = $RareDemon
 			sprite_width = $RareTargetCollision.shape.get_rect().size.x
 			sprite_height = $RareTargetCollision.shape.get_rect().size.y
 		"Butterfly":
 			sprite = $Butterfly
 			sprite_width = 72
 			sprite_height = 72
+			
 
 
 
