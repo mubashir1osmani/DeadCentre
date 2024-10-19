@@ -1,10 +1,53 @@
-[gd_scene load_steps=4 format=3 uid="uid://exmdb8mfu3oq"]
+[gd_scene load_steps=7 format=3 uid="uid://cu138esllxy2b"]
 
 [ext_resource type="Texture2D" uid="uid://dhstrwvi7cvyb" path="res://Assets/GAME-R2BG.png" id="1_51phe"]
 [ext_resource type="Texture2D" uid="uid://c6rryrq0cxy5q" path="res://Assets/GAME-R2BOX.png" id="2_pj8gm"]
 [ext_resource type="Texture2D" uid="uid://chy2deg0rxfma" path="res://Assets/GAME-R2Shelf.png" id="3_opvs4"]
+[ext_resource type="PackedScene" uid="uid://dhw4r8ki21djv" path="res://playermanager.tscn" id="4_8kcbh"]
+[ext_resource type="PackedScene" uid="uid://duqysa51tx2j6" path="res://round2badguy.tscn" id="5_qcc05"]
+
+[sub_resource type="GDScript" id="GDScript_6m66l"]
+script/source = "#round_2.gd
+extends Node2D
+
+var target_pool = []
+var current_index = 0
+
+# Function to initialize the target pool
+func _ready():
+	# Fill the pool with the specified targets
+	for _i in range(35):
+		target_pool.append(\"EasyTarget\")
+	for _i in range(10):
+		target_pool.append(\"MediumTarget\")
+	for _i in range(5):
+		target_pool.append(\"DangerTarget\")
+	target_pool.append(\"RareTarget\")  # Add the RareTarget
+
+	# Shuffle the pool to randomize the order
+	target_pool.shuffle()
+
+func spawn_bad_guy(target_type):
+	var bad_guy_scene = preload(\"res://round2badguy.tscn\")
+	var bad_guy = bad_guy_scene.instantiate()
+	bad_guy.target_type = target_type
+	add_child(bad_guy)
+	print(\"Bad guy spawned at: %s with target type %s\" % [bad_guy.position, target_type])
+
+func _on_timer_timeout():
+	get_tree().call_group(\"score\", \"change_lives\", -1)
+	# Check if the pool is depleted
+	if current_index < target_pool.size():
+		# Get the next target type from the pool
+		var target_type = target_pool[current_index]
+		spawn_bad_guy(target_type)
+		current_index += 1  # Move to the next target in the pool
+	else:
+		print(\"All targets have been spawned!\")
+"
 
 [node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_6m66l")
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(0.48, 0.36)
@@ -12,10 +55,23 @@ texture = ExtResource("1_51phe")
 centered = false
 
 [node name="Box" type="Sprite2D" parent="."]
+z_index = 10
+z_as_relative = false
 texture = ExtResource("2_pj8gm")
 centered = false
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Shelf" type="Sprite2D" parent="."]
+z_index = 20
+z_as_relative = false
 scale = Vector2(0.48, 0.36)
 texture = ExtResource("3_opvs4")
 centered = false
+
+[node name="PlayerManager" parent="." instance=ExtResource("4_8kcbh")]
+
+[node name="Node2D" parent="." instance=ExtResource("5_qcc05")]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

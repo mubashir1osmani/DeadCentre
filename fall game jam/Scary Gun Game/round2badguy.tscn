@@ -1,0 +1,64 @@
+[gd_scene load_steps=11 format=3 uid="uid://duqysa51tx2j6"]
+
+[ext_resource type="Script" path="res://round_2_badguy.gd" id="1_b4i5g"]
+[ext_resource type="Texture2D" uid="uid://dafwlve8abp13" path="res://Assets/GAME-R2SpiderFinal.png" id="1_b7giw"]
+[ext_resource type="Texture2D" uid="uid://cb8j320bjtpsp" path="res://Assets/GAME-R2SWeb2.png" id="2_h182l"]
+[ext_resource type="Texture2D" uid="uid://csmivh38hyili" path="res://Assets/GAME-R2DollFinalFr.png" id="4_2j0cq"]
+[ext_resource type="Texture2D" uid="uid://tt445hkmsmf7" path="res://Assets/GAME-R2ClownMFinal.png" id="5_p55wq"]
+[ext_resource type="Texture2D" uid="uid://d26sn4kaopmco" path="res://Assets/GAME-R2ClownH2.png" id="6_fm3dv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ibee"]
+size = Vector2(237, 173)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kt86b"]
+size = Vector2(106, 166)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mr8dv"]
+size = Vector2(121, 115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcjnf"]
+size = Vector2(102, 107)
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_b4i5g")
+
+[node name="EasyTargetStall" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="EasyTargetCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6ibee")
+
+[node name="Spider" type="Sprite2D" parent="."]
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("1_b7giw")
+
+[node name="Web" type="Sprite2D" parent="."]
+position = Vector2(-13.25, -283.165)
+scale = Vector2(0.1595, 0.149333)
+texture = ExtResource("2_h182l")
+
+[node name="MediumMask" type="Sprite2D" parent="."]
+position = Vector2(-8.815, -6.27)
+scale = Vector2(0.061875, 0.0628333)
+texture = ExtResource("4_2j0cq")
+
+[node name="MediumTargetCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kt86b")
+
+[node name="HazardMask" type="Sprite2D" parent="."]
+position = Vector2(-9.99998, -12.375)
+scale = Vector2(0.049125, 0.0470833)
+texture = ExtResource("5_p55wq")
+
+[node name="HazardTargetCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -6.5)
+shape = SubResource("RectangleShape2D_mr8dv")
+
+[node name="RareMask" type="Sprite2D" parent="."]
+position = Vector2(-10.795, 1.56)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("6_fm3dv")
+
+[node name="RareTargetCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lcjnf")
