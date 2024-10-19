@@ -31,6 +31,7 @@ centered = false
 [node name="PlayerManager" parent="." instance=ExtResource("4_8kcbh")]
 
 [node name="Node2D" parent="." instance=ExtResource("5_qcc05")]
+target_type = ""
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

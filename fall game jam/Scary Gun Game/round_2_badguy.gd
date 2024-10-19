@@ -6,14 +6,11 @@ var movement_type = 0  # 0: left to right, 1: right to left, 2: left to middle, 
 var direction = 1  # 1 for original direction, -1 for turned around
 var target_position = null  # for behaviors 2, 3, 4, and 5
 var is_paused = false  # Variable to track if the movement is paused
-var sprite
-var sprite_width
-var sprite_height
 @export var target_type: String = ""
 
 var oscillation_amplitude = 100  # Adjust as needed for vertical oscillation range
 var oscillation_speed = 4.0  # Speed of the oscillation
-var initial_y_position = 0  # Store initial Y position for oscillation reference
+var initial_y_position# Store initial Y position for oscillation reference
 var time_elapsed = 0.0  # Track elapsed time for sinusoidal movement
 
 func _ready():
@@ -95,6 +92,9 @@ func _ready():
 			initial_y_position = position.y  # Store initial Y position for the oscillation
 			z_index = 5
 			speed = -325
+	
+	#Set the initial_y_position for the oscillation
+	initial_y_position = position.y
 
 	if target_type == "RareTarget":
 		speed = speed * 2
@@ -149,6 +149,9 @@ func _process(delta):
 	# Don't process movement if paused
 	if is_paused:
 		return
+		
+	if target_type == "":
+		target_type = "EasyTarget"
 	
 	time_elapsed += delta  # Track time for oscillation calculation
 	
@@ -214,34 +217,44 @@ func _process(delta):
 				position.y -= speed * delta
 			"""
 
-	# Get the size of the current frame of the AnimatedSprite2D
+	# Get the size of the current frame of the Sprite2D
+	var sprite = null
+	var sprite_width = 0
+	var sprite_height = 0
+	if target_type == "":
+		target_type = "EasyTarget"
 	match target_type:
 		"EasyTarget":
 			sprite = $Spider
+			sprite_width = $EasyTargetCollision.shape.get_rect().size.x
+			sprite_height = $EasyTargetCollision.shape.get_rect().size.y
 		"MediumTarget":
 			sprite = $MediumMask
+			sprite_width = $MediumTargetCollision.shape.get_rect().size.x
+			sprite_height = $MediumTargetCollision.shape.get_rect().size.y
 		"DangerTarget":
 			sprite = $HazardMask
+			sprite_width = $HazardTargetCollision.shape.get_rect().size.x
+			sprite_height = $HazardTargetCollision.shape.get_rect().size.y
 		"RareTarget":
 			sprite = $RareMask
+			sprite_width = $RareTargetCollision.shape.get_rect().size.x
+			sprite_height = $RareTargetCollision.shape.get_rect().size.y
 		"Butterfly":
 			sprite = $Butterfly
-		
-	if sprite != null:
-		sprite_width = sprite.texture.get_size().x
-		sprite_height = sprite.texture.get_size().y
-	else:
-		sprite_width = 1
-		sprite_height = 1
+			
+
 
 
 	# Remove enemy if it leaves the screen
-	if position.x < -sprite_width or position.x > get_viewport_rect().size.x + sprite_width or position.y < -sprite_height or position.y > get_viewport_rect().size.y + sprite_height:
-		get_tree().call_group("player", "drop_combo")
-		if target_type == "DangerTarget":
-			get_tree().call_group("player", "change_lives", -15)
-		
-		queue_free()
+	if target_type != "Butterfly":
+		if position.x < -sprite_width or position.x > get_viewport_rect().size.x + sprite_width or position.y < -sprite_height or position.y > get_viewport_rect().size.y + sprite_height:
+			get_tree().call_group("player", "drop_combo")
+			if target_type == "DangerTarget":
+				get_tree().call_group("player", "change_lives", -15)
+			
+			queue_free()
+	
 
 
 # Timer callback to resume movement after 3 seconds

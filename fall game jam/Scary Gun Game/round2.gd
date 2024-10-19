@@ -1,4 +1,4 @@
-#round_3.gd
+#round_2.gd
 extends Node2D
 
 var target_pool = []
@@ -15,7 +15,7 @@ func _ready():
 		target_pool.append("DangerTarget")
 	for _i in range(5):
 		target_pool.append("Butterfly")
-	target_pool.append("RareTarget")  # Add the RareTarget
+	target_pool.append("DangerTarget")  # Add the RareTarget
 
 	# Shuffle the pool to randomize the order
 	target_pool.shuffle()
@@ -24,7 +24,8 @@ func spawn_bad_guy(target_type):
 	var bad_guy_scene = preload("res://round2badguy.tscn")
 	var bad_guy = bad_guy_scene.instantiate()
 	bad_guy.target_type = target_type
-	add_child(bad_guy)
+	if target_type != "":
+		add_child(bad_guy)
 	print("Bad guy spawned at: %s with target type %s" % [bad_guy.position, target_type])
 
 func _on_timer_timeout():
