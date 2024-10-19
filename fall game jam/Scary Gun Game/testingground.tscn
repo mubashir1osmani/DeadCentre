@@ -77,7 +77,7 @@ autostart = true
 [node name="NextButton" type="Sprite2D" parent="."]
 z_index = 200
 position = Vector2(1750, 540)
-scale = Vector2(0.237304, 0.19884)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("11_3rhbn")
 
 [node name="NextButtonArea" type="Area2D" parent="." groups=["score"]]
@@ -86,7 +86,9 @@ position = Vector2(1750, 540)
 scale = Vector2(0.237304, 0.19884)
 
 [node name="NextButtonCollision" type="CollisionPolygon2D" parent="NextButtonArea"]
-z_index = 101
+z_index = 99
+position = Vector2(10.2092, 0)
+scale = Vector2(0.845746, 1)
 polygon = PackedVector2Array(-488.824, -452.626, -400.33, -462.685, 442.47, -80.467, 493.038, -20.1167, 493.038, 10.0583, -471.968, 447.597, -497.251, 437.539)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

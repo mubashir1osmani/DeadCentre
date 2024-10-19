@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b2sa683s4eala"]
+[gd_scene load_steps=19 format=3 uid="uid://sixvtrscqnvd"]
 
 [ext_resource type="Texture2D" uid="uid://djl4pjegbti50" path="res://Assets/shop/ShopBackground.PNG" id="1_e5sx7"]
 [ext_resource type="Script" path="res://Assets/shop.gd" id="1_mbw2u"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://757x3it3ajbq" path="res://EyeSwirl_3.png" id="10_qqiyb"]
 [ext_resource type="Texture2D" uid="uid://hjn2enim3rma" path="res://EyeSwirl_1.png" id="11_t5en4"]
 [ext_resource type="Texture2D" uid="uid://be6fur3n0ns37" path="res://EyeSwirl_2.png" id="12_vn3hu"]
+[ext_resource type="Texture2D" uid="uid://45rx21u4rshq" path="res://Assets/NextBut.PNG" id="14_4dlwx"]
 
 [sub_resource type="Animation" id="Animation_738xb"]
 length = 0.001
@@ -194,3 +195,17 @@ position = Vector2(996, 237)
 scale = Vector2(0.06388, 0.0775249)
 sprite_frames = SubResource("SpriteFrames_qyy0x")
 animation = &"ShopEyes"
+
+[node name="NextBut" type="Sprite2D" parent="."]
+z_index = 12
+position = Vector2(1750, 940)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_4dlwx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+z_index = 11
+polygon = PackedVector2Array(1652, 851, 1670, 850, 1837, 925, 1848, 937, 1653, 1029)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
