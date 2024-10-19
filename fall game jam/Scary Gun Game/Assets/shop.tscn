@@ -82,68 +82,68 @@ scale = Vector2(0.48925, 0.363283)
 texture = ExtResource("1_e5sx7")
 
 [node name="PriceTag" type="Sprite2D" parent="."]
-position = Vector2(743, 618)
-scale = Vector2(0.0880828, 0.0880828)
+position = Vector2(681, 683.846)
+scale = Vector2(0.195164, 0.201123)
 texture = ExtResource("2_ynmi3")
 
 [node name="PriceTag2" type="Sprite2D" parent="."]
-position = Vector2(974, 618.054)
-scale = Vector2(0.0846286, 0.0846286)
+position = Vector2(1075.5, 679.939)
+scale = Vector2(0.197755, 0.190662)
 texture = ExtResource("2_ynmi3")
 
 [node name="PriceTag3" type="Sprite2D" parent="."]
-position = Vector2(1254, 618)
-scale = Vector2(0.0811744, 0.0811744)
+position = Vector2(1400.5, 666.929)
+scale = Vector2(0.189119, 0.18553)
 texture = ExtResource("2_ynmi3")
 
 [node name="PriceTag4" type="Sprite2D" parent="."]
-position = Vector2(1240, 902)
-scale = Vector2(0.0690846, 0.0690846)
+position = Vector2(1387, 970.44)
+scale = Vector2(0.196028, 0.19152)
 texture = ExtResource("2_ynmi3")
 
 [node name="PriceTag5" type="Sprite2D" parent="."]
-position = Vector2(991, 902)
-scale = Vector2(0.0690846, 0.0690846)
+position = Vector2(1013, 968.69)
+scale = Vector2(0.202073, 0.194524)
 texture = ExtResource("2_ynmi3")
 
 [node name="PriceTag6" type="Sprite2D" parent="."]
-position = Vector2(746, 892)
-scale = Vector2(0.0690846, 0.0690846)
+position = Vector2(666.5, 969.879)
+scale = Vector2(0.20639, 0.202783)
 texture = ExtResource("2_ynmi3")
 
 [node name="TicketBox" type="Sprite2D" parent="."]
-position = Vector2(419, 304)
-scale = Vector2(0.136465, 0.136465)
+position = Vector2(457, 241)
+scale = Vector2(0.254546, 0.318193)
 texture = ExtResource("3_dpk5j")
 
 [node name="3DGlasses" type="Sprite2D" parent="."]
-position = Vector2(690, 558)
-scale = Vector2(0.200743, 0.200743)
+position = Vector2(628, 564)
+scale = Vector2(0.296497, 0.244926)
 texture = ExtResource("4_naarb")
 
 [node name="Candy" type="Sprite2D" parent="."]
-position = Vector2(948, 558)
-scale = Vector2(0.126453, 0.126453)
+position = Vector2(1042, 561)
+scale = Vector2(0.241837, 0.196512)
 texture = ExtResource("5_m4kkb")
 
 [node name="IceCube" type="Sprite2D" parent="."]
-position = Vector2(1222, 560)
-scale = Vector2(0.130141, 0.130141)
+position = Vector2(1354, 553)
+scale = Vector2(0.180086, 0.196384)
 texture = ExtResource("6_ibhh8")
 
 [node name="Magazine" type="Sprite2D" parent="."]
-position = Vector2(706, 837)
-scale = Vector2(0.179806, 0.179806)
+position = Vector2(615, 846)
+scale = Vector2(0.263068, 0.260529)
 texture = ExtResource("7_0y4mh")
 
 [node name="Pillow" type="Sprite2D" parent="."]
-position = Vector2(968, 844)
-scale = Vector2(0.182557, 0.182557)
+position = Vector2(992, 859)
+scale = Vector2(0.287896, 0.279328)
 texture = ExtResource("8_qpqwr")
 
 [node name="Pills" type="Sprite2D" parent="."]
-position = Vector2(1222, 836)
-scale = Vector2(0.158012, 0.158012)
+position = Vector2(1350, 831)
+scale = Vector2(0.232381, 0.234653)
 texture = ExtResource("9_dxfi3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
