@@ -66,3 +66,7 @@ func _on_next_button_area_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		print("Next button clicked!")
 		get_tree().change_scene_to_file("res://Assets/shop.tscn")
+
+
+func _on_game_start_timer_timeout(): 
+	$Timer.start()

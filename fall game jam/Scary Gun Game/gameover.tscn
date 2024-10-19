@@ -1,38 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://bstbflgdtmynq"]
+[gd_scene load_steps=3 format=3 uid="uid://bstbflgdtmynq"]
 
-[ext_resource type="FontFile" uid="uid://njywc33hyf43" path="res://Assets/fonts/Wooden Log.ttf" id="1_flwfg"]
 [ext_resource type="Script" path="res://gameover.gd" id="1_r7n1k"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ggylv"]
-font = ExtResource("1_flwfg")
-font_size = 29
-font_color = Color(0, 0, 0, 1)
-shadow_color = Color(0.153064, 0.0892052, 0.0967897, 0)
+[ext_resource type="Texture2D" uid="uid://dk808bctso6da" path="res://Assets/Screen_Shot_2024-10-19_at_5.57.32_PM.png" id="2_bgvcv"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 367.0
+offset_right = 3.0
+offset_bottom = 367.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r7n1k")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1910.0
-offset_bottom = 1072.0
-color = Color(0.52, 0.24128, 0.1716, 1)
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 423.0
-offset_top = 258.0
-offset_right = 571.0
-offset_bottom = 288.0
-scale = Vector2(7.68, 7.68)
-text = "GAME OVER"
-label_settings = SubResource("LabelSettings_ggylv")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -62,3 +44,12 @@ text = "RETRY"
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "QUIT"
+
+[node name="ScreenShot2024-10-19At5_57_32Pm" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(957, 173)
+scale = Vector2(0.561404, 0.485612)
+texture = ExtResource("2_bgvcv")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

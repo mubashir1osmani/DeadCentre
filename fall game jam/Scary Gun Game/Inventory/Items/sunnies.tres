@@ -6,3 +6,5 @@
 script = ExtResource("1_fe76y")
 name = "Retro4DGlasses"
 bought = null
+lives = 0
+tickets = 0

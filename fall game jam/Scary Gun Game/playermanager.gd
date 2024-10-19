@@ -6,7 +6,7 @@ extends Node2D
 var score = 0
 var lives = 100
 var combo = 0
-var hp_bonus
+var hp_bonus = 0
 var level = 0
 
 
