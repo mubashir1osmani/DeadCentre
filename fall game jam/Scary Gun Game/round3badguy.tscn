@@ -26,11 +26,12 @@ radius = 36.0
 script = ExtResource("1_7mrcu")
 
 [node name="EasyDemon" type="Sprite2D" parent="."]
+position = Vector2(7.495, -23.05)
 scale = Vector2(0.14475, 0.137167)
 texture = ExtResource("1_4j0f7")
+flip_v = true
 
 [node name="EasyTargetCollision" type="CollisionShape2D" parent="."]
-position = Vector2(-9, -25.5)
 shape = SubResource("RectangleShape2D_ubdv1")
 
 [node name="MediumDemon" type="Sprite2D" parent="."]

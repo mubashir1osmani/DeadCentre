@@ -28,6 +28,7 @@ texture = ExtResource("3_xtfil")
 centered = false
 
 [node name="Area2D" parent="." instance=ExtResource("4_4k23v")]
+target_type = ""
 
 [node name="PlayerManager" parent="." instance=ExtResource("5_obvyn")]
 inv = null

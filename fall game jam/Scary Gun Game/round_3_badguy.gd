@@ -55,44 +55,64 @@ func _ready():
 		0:  # top dangle return
 			position = Vector2(100 + randi() % (int(get_viewport_rect().size.x) - 200), 0)
 			z_index = 35
-			speed = 300
-			target_position = position.y + (100 + randi() % 550)
+			speed = 1000
+			target_position = position.y + (100)
 		1:  # Left to right
-			position = Vector2(0, 300 + randi() % 500)
+			position = Vector2(0, 200 + randi() % 450)
+			z_index = 4
+			speed = 1000
+			if target_type == "Butterfly":
+				$Butterfly.flip_h = true
+			if target_type == "DangerTarget":
+				$HazardDemon.flip_h = true
+		2:  # Left to right
+			position = Vector2(0, 200 + randi() % 450)
+			z_index = 4
+			speed = 900
+			if target_type == "Butterfly":
+				$Butterfly.flip_h = true
+			if target_type == "DangerTarget":
+				$HazardDemon.flip_h = true
+		3:  # Left to right
+			position = Vector2(0, 200 + randi() % 450)
 			z_index = 4
 			speed = 800
-		2:  # Left to right
-			position = Vector2(0, 300 + randi() % 500)
+			if target_type == "Butterfly":
+				$Butterfly.flip_h = true
+			if target_type == "DangerTarget":
+				$HazardDemon.flip_h = true
+		4:  # Left to right
+			position = Vector2(0, 200 + randi() % 450)
 			z_index = 4
 			speed = 700
-		3:  # Left to right
-			position = Vector2(0, 300 + randi() % 500)
-			z_index = 4
-			speed = 600
-		4:  # Left to right
-			position = Vector2(0, 300 + randi() % 500)
-			z_index = 4
-			speed = 500
+			if target_type == "Butterfly":
+				$Butterfly.flip_h = true
+			if target_type == "DangerTarget":
+				$HazardDemon.flip_h = true
 		5:  # Left to right
-			position = Vector2(get_viewport_rect().size.x, 300 + randi() % 500)
+			position = Vector2(get_viewport_rect().size.x, 200 + randi() % 450)
+			initial_y_position = position.y
+			z_index = 4
+			speed = -1000
+		6:  # Left to right
+			position = Vector2(get_viewport_rect().size.x, 200 + randi() % 450)
+			initial_y_position = position.y
+			z_index = 4
+			speed = -900
+			speed = -1000
+
+		7:  # Left to right
+			position = Vector2(get_viewport_rect().size.x, 200 + randi() % 450)
 			initial_y_position = position.y
 			z_index = 4
 			speed = -800
-		6:  # Left to right
-			position = Vector2(get_viewport_rect().size.x, 300 + randi() % 500)
-			initial_y_position = position.y
-			z_index = 4
-			speed = -700
-		7:  # Left to right
-			position = Vector2(get_viewport_rect().size.x, 300 + randi() % 500)
-			initial_y_position = position.y
-			z_index = 4
-			speed = -600
+			speed = -1000
 		8:  # Left to right with oscillation (new behavior)
-			position = Vector2(get_viewport_rect().size.x, 300 + randi() % 500)  # Random starting Y position
+			position = Vector2(get_viewport_rect().size.x, 200 + randi() % 450)  # Random starting Y position
 			initial_y_position = position.y  # Store initial Y position for the oscillation
 			z_index = 4
-			speed = -500
+			speed = -600
+			speed = -1000
 		9: # left stop right
 			position = Vector2(0, 700)
 			target_position = 1060 + (randi() % 760)

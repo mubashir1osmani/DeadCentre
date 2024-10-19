@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://desp02ebl4suf"]
+[gd_scene load_steps=4 format=3 uid="uid://bstbflgdtmynq"]
 
 [ext_resource type="FontFile" uid="uid://njywc33hyf43" path="res://Assets/fonts/Wooden Log.ttf" id="1_flwfg"]
 [ext_resource type="Script" path="res://gameover.gd" id="1_r7n1k"]
