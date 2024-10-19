@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://c83fu4u2bkjea"]
+[gd_scene load_steps=18 format=3 uid="uid://c83fu4u2bkjea"]
 
+[ext_resource type="Script" path="res://Assets/shop.gd" id="1_504jb"]
 [ext_resource type="Texture2D" uid="uid://djl4pjegbti50" path="res://Assets/shop/ShopBackground.PNG" id="1_e5sx7"]
 [ext_resource type="Texture2D" uid="uid://dfdgv8dgrol8s" path="res://Assets/shop/shopitems/PriceTag.PNG" id="2_ynmi3"]
 [ext_resource type="Texture2D" uid="uid://d2exhx1hklcpu" path="res://Assets/shop/TicketBox.PNG" id="3_dpk5j"]
@@ -74,7 +75,25 @@ _data = {
 "eyes": SubResource("Animation_tl8dj")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_um3tv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_t5en4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vn3hu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qqiyb")
+}],
+"loop": true,
+"name": &"ShopEyes",
+"speed": 5.0
+}]
+
 [node name="Shop" type="Node2D"]
+script = ExtResource("1_504jb")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(976.5, 547.076)
@@ -82,12 +101,12 @@ scale = Vector2(0.48925, 0.363283)
 texture = ExtResource("1_e5sx7")
 
 [node name="PriceTag" type="Sprite2D" parent="."]
-position = Vector2(681, 683.846)
+position = Vector2(687, 675)
 scale = Vector2(0.195164, 0.201123)
 texture = ExtResource("2_ynmi3")
 
 [node name="PriceTag2" type="Sprite2D" parent="."]
-position = Vector2(1075.5, 679.939)
+position = Vector2(1058, 666)
 scale = Vector2(0.197755, 0.190662)
 texture = ExtResource("2_ynmi3")
 
@@ -153,16 +172,27 @@ libraries = {
 autoplay = "eyes"
 
 [node name="EyeSwirl3" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(987, 278)
 scale = Vector2(0.0736131, 0.0736131)
 texture = ExtResource("10_qqiyb")
 
 [node name="EyeSwirl1" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(988, 280)
 scale = Vector2(0.0668564, 0.0668564)
 texture = ExtResource("11_t5en4")
 
 [node name="EyeSwirl2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(983, 279)
 scale = Vector2(0.0707681, 0.0707681)
 texture = ExtResource("12_vn3hu")
+
+[node name="EyeMoves" type="AnimatedSprite2D" parent="."]
+position = Vector2(976, 231)
+scale = Vector2(0.0776438, 0.0816145)
+sprite_frames = SubResource("SpriteFrames_um3tv")
+animation = &"ShopEyes"
+frame = 1
+frame_progress = 0.901849
