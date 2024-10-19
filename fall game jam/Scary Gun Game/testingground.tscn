@@ -58,7 +58,7 @@ z_as_relative = false
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="PlayerManager" parent="." groups=["player"] instance=ExtResource("4_b2krr")]
+[node name="PlayerManager" parent="." instance=ExtResource("4_b2krr")]
 z_index = 100
 z_as_relative = false
 position = Vector2(17, 22)

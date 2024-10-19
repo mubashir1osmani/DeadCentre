@@ -5,3 +5,4 @@
 [resource]
 script = ExtResource("1_fe76y")
 name = "Retro4DGlasses"
+bought = false
