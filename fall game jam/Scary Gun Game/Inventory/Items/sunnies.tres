@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://decg34sxw50ku"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_fe76y"]
+[ext_resource type="Texture2D" uid="uid://dvnycspfoldox" path="res://Assets/shop/shopitems/3DGlassess.PNG" id="2_bvapq"]
+
+[resource]
+script = ExtResource("1_fe76y")
+name = "Retro4DGlasses"
+texture = ExtResource("2_bvapq")

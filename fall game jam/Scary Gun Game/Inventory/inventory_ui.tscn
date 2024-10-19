@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bk33mu5k7qv4v"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_ui.gd" id="1_dux3c"]
+[ext_resource type="Texture2D" uid="uid://dvnycspfoldox" path="res://Assets/shop/shopitems/3DGlassess.PNG" id="2_vt3yf"]
+[ext_resource type="Texture2D" uid="uid://to8wnbagk50m" path="res://Assets/shop/shopitems/Candy.PNG" id="3_wr8k5"]
+[ext_resource type="Texture2D" uid="uid://bk23mphtg4ydm" path="res://Assets/shop/shopitems/IceCube.PNG" id="4_vcfrk"]
+[ext_resource type="Texture2D" uid="uid://bw4pg4efsn3h2" path="res://Assets/shop/shopitems/Magazine.PNG" id="5_kfbjr"]
+[ext_resource type="Texture2D" uid="uid://curielsd8cb20" path="res://Assets/shop/shopitems/Pillow.PNG" id="6_vo4bd"]
+[ext_resource type="Texture2D" uid="uid://ctbjvjunhjtb1" path="res://Assets/shop/shopitems/Pills.PNG" id="7_b8y77"]
+
+[node name="Inventory_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 7.0
+offset_top = -81.0
+offset_right = 408.0
+offset_bottom = -38.0
+script = ExtResource("1_dux3c")
+
+[node name="3dGlassess" type="Sprite2D" parent="."]
+position = Vector2(47.875, -6.93752)
+scale = Vector2(0.111683, 0.150743)
+texture = ExtResource("2_vt3yf")
+
+[node name="Candy" type="Sprite2D" parent="."]
+position = Vector2(179, -16.6875)
+scale = Vector2(0.110204, 0.0821221)
+texture = ExtResource("3_wr8k5")
+
+[node name="IceCube" type="Sprite2D" parent="."]
+position = Vector2(319.719, -11.5937)
+scale = Vector2(0.113485, 0.0964105)
+texture = ExtResource("4_vcfrk")
+
+[node name="Magazine" type="Sprite2D" parent="."]
+position = Vector2(444, -9)
+scale = Vector2(0.0971903, 0.100837)
+texture = ExtResource("5_kfbjr")
+
+[node name="Pillow" type="Sprite2D" parent="."]
+position = Vector2(605.25, -29.7187)
+scale = Vector2(0.122093, 0.120496)
+texture = ExtResource("6_vo4bd")
+
+[node name="Pills" type="Sprite2D" parent="."]
+position = Vector2(733.781, 1.3125)
+scale = Vector2(0.149666, 0.117596)
+texture = ExtResource("7_b8y77")

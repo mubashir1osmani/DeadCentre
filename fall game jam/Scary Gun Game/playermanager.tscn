@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhw4r8ki21djv"]
+[gd_scene load_steps=5 format=3 uid="uid://dhw4r8ki21djv"]
 
 [ext_resource type="Script" path="res://playermanager.gd" id="1_ktasq"]
 [ext_resource type="FontFile" uid="uid://njywc33hyf43" path="res://Assets/fonts/Wooden Log.ttf" id="2_h7o7v"]
+[ext_resource type="Resource" uid="uid://ct5uhm606uswe" path="res://Inventory/playerinv.tres" id="2_htc6e"]
+[ext_resource type="PackedScene" uid="uid://bk33mu5k7qv4v" path="res://Inventory/inventory_ui.tscn" id="4_fxywc"]
 
 [node name="PlayerManager" type="Node2D" groups=["player"]]
 script = ExtResource("1_ktasq")
+inv = ExtResource("2_htc6e")
 
 [node name="ScoreLabel" type="Label" parent="." groups=["player"]]
 offset_left = -1.0
@@ -38,3 +41,9 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.317647)
 theme_override_fonts/font = ExtResource("2_h7o7v")
 theme_override_font_sizes/font_size = 30
 text = "COMBO HERE"
+
+[node name="Inventory_UI" parent="." instance=ExtResource("4_fxywc")]
+offset_left = 12.0
+offset_top = 1014.0
+offset_right = 1345.0
+offset_bottom = 1078.0

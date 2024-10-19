@@ -1,6 +1,8 @@
 #playermanager.gd
 extends Node2D
 
+@export var inv = Inv
+
 var score = 0
 var lives = 100
 

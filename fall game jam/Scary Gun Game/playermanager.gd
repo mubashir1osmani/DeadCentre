@@ -1,6 +1,8 @@
 #playermanager.gd
 extends Node2D
 
+@export var inv: Inv
+
 var score = 0
 var lives = 100
 var combo = 0
@@ -43,3 +45,5 @@ func change_combo(combo_mod):
 func drop_combo():
 	combo = 0
 	$ComboLabel.text = "Combo: %d" % combo
+	
+	
