@@ -28,7 +28,8 @@ scale = Vector2(0.48, 0.36)
 texture = ExtResource("3_opvs4")
 centered = false
 
-[node name="PlayerManager" parent="." groups=["score"] instance=ExtResource("4_8kcbh")]
+[node name="PlayerManager" parent="." groups=["player"] instance=ExtResource("4_8kcbh")]
+z_index = 100
 
 [node name="Node2D" parent="." instance=ExtResource("5_qcc05")]
 

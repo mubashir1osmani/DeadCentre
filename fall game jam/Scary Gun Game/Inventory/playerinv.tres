@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_fk884"]
 [ext_resource type="Resource" uid="uid://decg34sxw50ku" path="res://Inventory/Items/sunnies.tres" id="2_s2v67"]
-[ext_resource type="Resource" path="res://Inventory/Items/candy.tres" id="3_jhytt"]
-[ext_resource type="Resource" path="res://Inventory/Items/ice.tres" id="4_hao8a"]
-[ext_resource type="Resource" path="res://Inventory/Items/magazine.tres" id="5_pn2gw"]
-[ext_resource type="Resource" path="res://Inventory/Items/pillow.tres" id="6_e06os"]
-[ext_resource type="Resource" path="res://Inventory/Items/pills.tres" id="7_tcdxb"]
+[ext_resource type="Resource" uid="uid://drncmmohpgio" path="res://Inventory/Items/candy.tres" id="3_jhytt"]
+[ext_resource type="Resource" uid="uid://dmcfx7m8f4cxj" path="res://Inventory/Items/ice.tres" id="4_hao8a"]
+[ext_resource type="Resource" uid="uid://et1e4bpjes56" path="res://Inventory/Items/magazine.tres" id="5_pn2gw"]
+[ext_resource type="Resource" uid="uid://c86rbnax5lr1p" path="res://Inventory/Items/pillow.tres" id="6_e06os"]
+[ext_resource type="Resource" uid="uid://chumfsfeijp8n" path="res://Inventory/Items/pills.tres" id="7_tcdxb"]
 [ext_resource type="Script" path="res://Inventory/inventory.gd" id="8_kyok2"]
 
 [resource]

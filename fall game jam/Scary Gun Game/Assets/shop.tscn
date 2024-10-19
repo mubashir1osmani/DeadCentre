@@ -106,7 +106,7 @@ scale = Vector2(0.177029, 0.156785)
 texture = ExtResource("2_ynmi3")
 
 [node name="PriceTag2" type="Sprite2D" parent="."]
-position = Vector2(990, 642)
+position = Vector2(1014, 649)
 scale = Vector2(0.171848, 0.147847)
 texture = ExtResource("2_ynmi3")
 
@@ -141,12 +141,12 @@ scale = Vector2(0.309815, 0.302352)
 texture = ExtResource("4_naarb")
 
 [node name="Candy" type="Sprite2D" parent="."]
-position = Vector2(962, 549)
-scale = Vector2(0.214247, 0.182994)
+position = Vector2(977, 554)
+scale = Vector2(0.215287, 0.203125)
 texture = ExtResource("5_m4kkb")
 
 [node name="IceCube" type="Sprite2D" parent="."]
-position = Vector2(1338, 564)
+position = Vector2(1314, 556)
 scale = Vector2(0.21097, 0.194941)
 texture = ExtResource("6_ibhh8")
 

@@ -58,10 +58,10 @@ z_as_relative = false
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="PlayerManager" parent="." instance=ExtResource("4_b2krr")]
+[node name="PlayerManager" parent="." groups=["player"] instance=ExtResource("4_b2krr")]
 z_index = 100
 z_as_relative = false
-position = Vector2(74, 38)
+position = Vector2(17, 22)
 
 [node name="PauseBut" type="Sprite2D" parent="."]
 position = Vector2(1753, 90)
@@ -87,7 +87,6 @@ scale = Vector2(0.237304, 0.19884)
 
 [node name="NextButtonCollision" type="CollisionPolygon2D" parent="NextButtonArea"]
 z_index = 101
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(-488.824, -452.626, -400.33, -462.685, 442.47, -80.467, 493.038, -20.1167, 493.038, 10.0583, -471.968, 447.597, -497.251, 437.539)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

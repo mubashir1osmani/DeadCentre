@@ -27,7 +27,7 @@ project/assembly_name="Scary Gun Game"
 
 [global_group]
 
-score=""
+player=""
 
 [rendering]
 

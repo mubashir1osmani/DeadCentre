@@ -11,38 +11,38 @@
 [node name="Inventory_UI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 309.0
-offset_top = 768.0
-offset_right = 1928.0
+offset_left = 2.0
+offset_top = 947.0
+offset_right = 1163.0
 offset_bottom = 1073.0
 script = ExtResource("1_dux3c")
 
 [node name="3dGlassess" type="Sprite2D" parent="."]
-position = Vector2(101, 231.883)
-scale = Vector2(0.230024, 0.288645)
+position = Vector2(76, 51.5586)
+scale = Vector2(0.186441, 0.21957)
 texture = ExtResource("2_vt3yf")
 
 [node name="Candy" type="Sprite2D" parent="."]
-position = Vector2(332, 224)
-scale = Vector2(0.188775, 0.158521)
+position = Vector2(231, 55)
+scale = Vector2(0.148469, 0.114144)
 texture = ExtResource("3_wr8k5")
 
 [node name="IceCube" type="Sprite2D" parent="."]
-position = Vector2(547, 218)
-scale = Vector2(0.205538, 0.176914)
+position = Vector2(362, 56)
+scale = Vector2(0.133653, 0.11876)
 texture = ExtResource("4_vcfrk")
 
 [node name="Magazine" type="Sprite2D" parent="."]
-position = Vector2(753, 226)
-scale = Vector2(0.202032, 0.250363)
+position = Vector2(488, 59)
+scale = Vector2(0.136566, 0.155419)
 texture = ExtResource("5_kfbjr")
 
 [node name="Pillow" type="Sprite2D" parent="."]
-position = Vector2(980, 219)
-scale = Vector2(0.220666, 0.253954)
+position = Vector2(619, 59)
+scale = Vector2(0.13676, 0.153339)
 texture = ExtResource("6_vo4bd")
 
 [node name="Pills" type="Sprite2D" parent="."]
-position = Vector2(1163, 220)
-scale = Vector2(0.216617, 0.143832)
+position = Vector2(716, 55)
+scale = Vector2(0.135015, 0.0967094)
 texture = ExtResource("7_b8y77")
