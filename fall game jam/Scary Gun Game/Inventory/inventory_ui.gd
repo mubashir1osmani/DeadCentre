@@ -13,7 +13,6 @@ func _ready():
 	$"Pillow".visible = false
 	$"Pills".visible = false
 	
-	
 func _process(delta):
 	if inv.items[0].bought :
 		$"3dGlassess".visible = true

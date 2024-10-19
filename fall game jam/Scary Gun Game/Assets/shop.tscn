@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://sixvtrscqnvd"]
+[gd_scene load_steps=20 format=3 uid="uid://b2sa683s4eala"]
 
 [ext_resource type="Texture2D" uid="uid://djl4pjegbti50" path="res://Assets/shop/ShopBackground.PNG" id="1_e5sx7"]
 [ext_resource type="Script" path="res://Assets/shop.gd" id="1_mbw2u"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://hjn2enim3rma" path="res://EyeSwirl_1.png" id="11_t5en4"]
 [ext_resource type="Texture2D" uid="uid://be6fur3n0ns37" path="res://EyeSwirl_2.png" id="12_vn3hu"]
 [ext_resource type="Texture2D" uid="uid://45rx21u4rshq" path="res://Assets/NextBut.PNG" id="14_4dlwx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hoddt"]
 
 [sub_resource type="Animation" id="Animation_738xb"]
 length = 0.001
@@ -140,6 +142,9 @@ texture = ExtResource("3_dpk5j")
 position = Vector2(608, 563)
 scale = Vector2(0.309815, 0.302352)
 texture = ExtResource("4_naarb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3DGlasses"]
+shape = SubResource("RectangleShape2D_hoddt")
 
 [node name="Candy" type="Sprite2D" parent="."]
 position = Vector2(977, 554)
