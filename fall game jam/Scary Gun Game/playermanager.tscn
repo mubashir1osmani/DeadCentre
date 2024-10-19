@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://playermanager.gd" id="1_ktasq"]
 [ext_resource type="FontFile" uid="uid://njywc33hyf43" path="res://Assets/fonts/Wooden Log.ttf" id="2_h7o7v"]
 
-[node name="PlayerManager" type="Node2D" groups=["score"]]
+[node name="PlayerManager" type="Node2D" groups=["player"]]
 script = ExtResource("1_ktasq")
 
-[node name="ScoreLabel" type="Label" parent="." groups=["score"]]
+[node name="ScoreLabel" type="Label" parent="." groups=["player"]]
 offset_left = -1.0
 offset_top = 5.0
 offset_right = 167.0
@@ -17,7 +17,7 @@ theme_override_fonts/font = ExtResource("2_h7o7v")
 theme_override_font_sizes/font_size = 30
 text = "SCORE HERE"
 
-[node name="LivesLabel" type="Label" parent="." groups=["score"]]
+[node name="LivesLabel" type="Label" parent="." groups=["player"]]
 offset_left = 1.0
 offset_top = 45.0
 offset_right = 161.0
@@ -28,7 +28,7 @@ theme_override_fonts/font = ExtResource("2_h7o7v")
 theme_override_font_sizes/font_size = 30
 text = "LIVES HERE"
 
-[node name="ComboLabel" type="Label" parent="." groups=["score"]]
+[node name="ComboLabel" type="Label" parent="." groups=["player"]]
 offset_left = 2.0
 offset_top = 85.0
 offset_right = 174.0

@@ -1,3 +1,4 @@
+#round_3.gd
 extends Node2D
 
 var target_pool = []
@@ -6,19 +7,21 @@ var current_index = 0
 # Function to initialize the target pool
 func _ready():
 	# Fill the pool with the specified targets
-	for _i in range(35):
+	for _i in range(30):
 		target_pool.append("EasyTarget")
-	for _i in range(10):
+	for _i in range(15):
 		target_pool.append("MediumTarget")
-	for _i in range(5):
+	for _i in range(10):
 		target_pool.append("DangerTarget")
+	for _i in range(5):
+		target_pool.append("Butterfly")
 	target_pool.append("RareTarget")  # Add the RareTarget
 
 	# Shuffle the pool to randomize the order
 	target_pool.shuffle()
 
 func spawn_bad_guy(target_type):
-	var bad_guy_scene = preload("res://badguy.tscn")
+	var bad_guy_scene = preload("res://round2badguy.tscn")
 	var bad_guy = bad_guy_scene.instantiate()
 	bad_guy.target_type = target_type
 	add_child(bad_guy)
