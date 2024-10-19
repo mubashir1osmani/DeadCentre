@@ -43,7 +43,7 @@ theme_override_font_sizes/font_size = 30
 text = "COMBO HERE"
 
 [node name="Inventory_UI" parent="." instance=ExtResource("4_fxywc")]
-offset_left = 12.0
-offset_top = 1014.0
-offset_right = 1345.0
-offset_bottom = 1078.0
+offset_left = 0.0
+offset_top = 715.0
+offset_right = 1847.0
+offset_bottom = 877.0

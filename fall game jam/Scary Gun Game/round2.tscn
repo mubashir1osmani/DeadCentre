@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cu138esllxy2b"]
+[gd_scene load_steps=8 format=3 uid="uid://cu138esllxy2b"]
 
 [ext_resource type="Texture2D" uid="uid://dhstrwvi7cvyb" path="res://Assets/GAME-R2BG.png" id="1_51phe"]
 [ext_resource type="Script" path="res://round2.gd" id="1_imdu2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://chy2deg0rxfma" path="res://Assets/GAME-R2Shelf.png" id="3_opvs4"]
 [ext_resource type="PackedScene" uid="uid://dhw4r8ki21djv" path="res://playermanager.tscn" id="4_8kcbh"]
 [ext_resource type="PackedScene" uid="uid://duqysa51tx2j6" path="res://round2badguy.tscn" id="5_qcc05"]
+[ext_resource type="PackedScene" uid="uid://bk33mu5k7qv4v" path="res://Inventory/inventory_ui.tscn" id="7_aak3s"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_imdu2")
@@ -35,5 +36,12 @@ centered = false
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.83
 autostart = true
+
+[node name="Inventory_UI" parent="." instance=ExtResource("7_aak3s")]
+z_index = 100
+offset_left = 98.0
+offset_top = 777.0
+offset_right = 1337.0
+offset_bottom = 992.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
