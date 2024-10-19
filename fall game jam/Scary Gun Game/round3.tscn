@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2rcvhfmq2bkf"]
+
+[ext_resource type="Texture2D" uid="uid://d3fyvlmvs3kyx" path="res://Assets/GAME-R3HellBG.png" id="1_aokys"]
+[ext_resource type="Texture2D" uid="uid://d0k04gg8f2edw" path="res://Assets/GAME-R3Catacombs.png" id="2_8x1t5"]
+[ext_resource type="Texture2D" uid="uid://chy2deg0rxfma" path="res://Assets/GAME-R2Shelf.png" id="3_xtfil"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Hell" type="Sprite2D" parent="."]
+scale = Vector2(0.48, 0.36)
+texture = ExtResource("1_aokys")
+centered = false
+
+[node name="Catacombs" type="Sprite2D" parent="."]
+z_index = 25
+scale = Vector2(0.48, 0.36)
+texture = ExtResource("2_8x1t5")
+centered = false
+
+[node name="Shelf" type="Sprite2D" parent="."]
+z_index = 50
+scale = Vector2(0.48, 0.36)
+texture = ExtResource("3_xtfil")
+centered = false

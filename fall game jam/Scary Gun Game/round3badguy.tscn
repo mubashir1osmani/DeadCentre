@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://b13q142k3y80q"]
+
+[ext_resource type="Texture2D" uid="uid://b1dxnuqwhkvbi" path="res://Assets/GAME-R3Green.png" id="1_4j0f7"]
+[ext_resource type="Texture2D" uid="uid://ba7v8o77xud4s" path="res://Assets/GAME-R3Yellow.png" id="2_1yxxd"]
+[ext_resource type="Texture2D" uid="uid://bn3t0u341utdm" path="res://Assets/GAME-R3Red.png" id="3_cadmf"]
+[ext_resource type="Texture2D" uid="uid://bkbqgxjvumr7" path="res://Assets/GAME-R3Purple.png" id="4_0ipq0"]
+[ext_resource type="Texture2D" uid="uid://dt26fxwxope0t" path="res://Assets/Butterfly.PNG" id="5_gldx7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubdv1"]
+size = Vector2(564, 333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqlcc"]
+size = Vector2(271, 448)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4yn8"]
+size = Vector2(289, 284)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71uii"]
+size = Vector2(114, 152)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nmpuh"]
+radius = 36.0
+
+[node name="Area2D" type="Area2D"]
+
+[node name="EasyDemon" type="Sprite2D" parent="."]
+scale = Vector2(0.14475, 0.137167)
+texture = ExtResource("1_4j0f7")
+
+[node name="EasyDimensions" type="CollisionShape2D" parent="."]
+position = Vector2(-9, -25.5)
+shape = SubResource("RectangleShape2D_ubdv1")
+
+[node name="MediumDemon" type="Sprite2D" parent="."]
+position = Vector2(-89.385, 0)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_1yxxd")
+
+[node name="MediumDimensions" type="CollisionShape2D" parent="."]
+position = Vector2(-34.5, 3)
+shape = SubResource("RectangleShape2D_nqlcc")
+
+[node name="MediumTargetCollision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-168, -215, 82, -215, 90, 224, -100, 222, -80, -140, -171, -140)
+
+[node name="HazardDemon" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_cadmf")
+
+[node name="HazardDimensions" type="CollisionShape2D" parent="."]
+position = Vector2(-15.5, -9)
+shape = SubResource("RectangleShape2D_l4yn8")
+
+[node name="HazardTargetCollision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-2, -1, -43, -149, 139, -147, 73, 71, -19, 140, -167, 125, -56, 11)
+
+[node name="RareDemon" type="Sprite2D" parent="."]
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("4_0ipq0")
+
+[node name="RareDimensions" type="CollisionShape2D" parent="."]
+position = Vector2(1, -2)
+shape = SubResource("RectangleShape2D_71uii")
+
+[node name="Butterfly" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_gldx7")
+
+[node name="ButterflyCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nmpuh")
