@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwnfetl1bpdb4"
+path="res://.godot/imported/Welcome to Dead Center!.mp3-b8a46752415ccc12db48c90218f2c82a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Announcer/Welcome to Dead Center!.mp3"
+dest_files=["res://.godot/imported/Welcome to Dead Center!.mp3-b8a46752415ccc12db48c90218f2c82a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctytu7atp7n23"
+path="res://.godot/imported/For Your F-Final Round!.mp3-22c4c361d265188139ebc56250e4f8c6.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Announcer/For Your F-Final Round!.mp3"
+dest_files=["res://.godot/imported/For Your F-Final Round!.mp3-22c4c361d265188139ebc56250e4f8c6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

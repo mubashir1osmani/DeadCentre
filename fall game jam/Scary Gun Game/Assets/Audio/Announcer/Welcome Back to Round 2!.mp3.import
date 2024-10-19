@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bx33qh7yplaw6"
+path="res://.godot/imported/Welcome Back to Round 2!.mp3-1f2bf2aa385817c15a1eaaa96d63bcaf.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Announcer/Welcome Back to Round 2!.mp3"
+dest_files=["res://.godot/imported/Welcome Back to Round 2!.mp3-1f2bf2aa385817c15a1eaaa96d63bcaf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

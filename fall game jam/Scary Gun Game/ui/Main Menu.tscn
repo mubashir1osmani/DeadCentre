@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnds5qlp4fj24"]
+[gd_scene load_steps=4 format=3 uid="uid://cnds5qlp4fj24"]
 
-[ext_resource type="Script" path="res://ui/main_menu.gd" id="1_ugk5y"]
 [ext_resource type="FontFile" uid="uid://njywc33hyf43" path="res://Assets/fonts/Wooden Log.ttf" id="2_4wx0p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e67we"]
@@ -18,7 +17,6 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ugk5y")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0

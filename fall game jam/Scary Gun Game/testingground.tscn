@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://doqvupgemct5y"]
+[gd_scene load_steps=14 format=3 uid="uid://doqvupgemct5y"]
 
 [ext_resource type="Script" path="res://testingground.gd" id="1_28gsk"]
 [ext_resource type="Texture2D" uid="uid://my5l840gfv7o" path="res://Assets/Last.PNG" id="3_8pnfu"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://bbugdidowy5xi" path="res://PauseBut.PNG" id="9_681y8"]
 [ext_resource type="Script" path="res://pause.gd" id="10_bh5f5"]
 [ext_resource type="Texture2D" uid="uid://45rx21u4rshq" path="res://Assets/NextBut.PNG" id="11_3rhbn"]
+[ext_resource type="AudioStream" uid="uid://bwnfetl1bpdb4" path="res://Assets/Audio/Announcer/Welcome to Dead Center!.mp3" id="12_sk6xs"]
+[ext_resource type="AudioStream" uid="uid://ch2bcmxbvp14" path="res://Assets/Audio/Announcer/Great Job!.mp3" id="13_eajhl"]
 
 [node name="Node2D3" type="Node2D"]
 script = ExtResource("1_28gsk")
@@ -93,6 +95,12 @@ polygon = PackedVector2Array(-488.824, -452.626, -400.33, -462.685, 442.47, -80.
 wait_time = 18.0
 one_shot = true
 autostart = true
+
+[node name="Round1_start" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_sk6xs")
+
+[node name="Round1_end" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_eajhl")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ixjib5qxgjvp"
+path="res://.godot/imported/Buckle up!.mp3-a63f0f3e1454802bff666c005d565c0c.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Announcer/Buckle up!.mp3"
+dest_files=["res://.godot/imported/Buckle up!.mp3-a63f0f3e1454802bff666c005d565c0c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

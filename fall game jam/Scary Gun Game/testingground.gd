@@ -10,6 +10,7 @@ var can_click
 func _ready():
 	$NextButton.visible = false
 	$NextButtonArea/NextButtonCollision.disabled = true
+	$Round1_start.play()
 	
 	# Fill the pool with the specified targets
 	for _i in range(35):
@@ -57,6 +58,7 @@ func _on_timer_timeout():
 
 func _on_level_timer_timeout():
 	print("LEVEL OVER!")
+	$Round1_end.play()
 	$NextButton.visible = true
 	$NextButtonArea/NextButtonCollision.disabled = false
 

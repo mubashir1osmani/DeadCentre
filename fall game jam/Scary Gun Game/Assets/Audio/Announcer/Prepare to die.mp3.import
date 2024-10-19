@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vu7krp5h6wme"
+path="res://.godot/imported/Prepare to die.mp3-092681612c02c4b2ae758f31f87b5787.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Announcer/Prepare to die.mp3"
+dest_files=["res://.godot/imported/Prepare to die.mp3-092681612c02c4b2ae758f31f87b5787.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
