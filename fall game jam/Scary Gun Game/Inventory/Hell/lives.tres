@@ -6,5 +6,5 @@
 script = ExtResource("1_2xum4")
 name = "Lives"
 bought = false
-lives = 0
+lives = 100
 tickets = 0

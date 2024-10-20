@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cu138esllxy2b"]
+[gd_scene load_steps=12 format=3 uid="uid://cu138esllxy2b"]
 
 [ext_resource type="Texture2D" uid="uid://dhstrwvi7cvyb" path="res://Assets/GAME-R2BG.png" id="1_51phe"]
 [ext_resource type="Script" path="res://round2.gd" id="1_imdu2"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://ctytu7atp7n23" path="res://Assets/Audio/Announcer/For Your F-Final Round!.mp3" id="8_lgyt0"]
 [ext_resource type="Texture2D" uid="uid://45rx21u4rshq" path="res://Assets/NextBut.PNG" id="9_nrypw"]
 [ext_resource type="AudioStream" uid="uid://ds7caantw343k" path="res://Assets/Audio/SoundEffect/gunshot.wav" id="10_b4mfn"]
+[ext_resource type="AudioStream" uid="uid://rck5pbgt3cny" path="res://Assets/Audio/Music/round2FGJ.wav" id="11_2sere"]
 
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_imdu2")
@@ -72,6 +73,9 @@ polygon = PackedVector2Array(1654, 449, 1670, 448, 1835, 524, 1846, 539, 1654, 6
 stream = ExtResource("10_b4mfn")
 
 [node name="Round2Theme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_2sere")
+volume_db = -16.838
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]

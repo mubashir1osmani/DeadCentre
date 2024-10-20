@@ -63,5 +63,6 @@ func go_to_level(x):
 		get_tree().change_scene_to_file("res://shop.tscn")
 	if level == 5:
 		get_tree().change_scene_to_file("res://round3.tscn")
+		
 	
 	
