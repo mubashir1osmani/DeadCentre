@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cuepg2anfrsj7"
+path="res://.godot/imported/Demon Ate Smtg Spicy RIP.mp3-5936e494a47829520dcec5f5b5fcec57.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SoundEffect/Demon Ate Smtg Spicy RIP.mp3"
+dest_files=["res://.godot/imported/Demon Ate Smtg Spicy RIP.mp3-5936e494a47829520dcec5f5b5fcec57.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
