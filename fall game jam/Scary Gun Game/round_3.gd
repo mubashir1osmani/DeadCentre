@@ -56,3 +56,7 @@ func _on_area_2d_2_input_event(viewport, event, shape_idx):
 func _on_level_timer_timeout():
 	$NextButton.visible = true
 	$NextButtonArea/NextButtonCollision.disabled = false
+	
+func _input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		$gunshot.play()

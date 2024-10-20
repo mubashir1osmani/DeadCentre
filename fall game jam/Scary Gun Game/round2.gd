@@ -57,3 +57,7 @@ func _on_level_timer_timeout():
 	$Round2_end.play()
 	$NextButton.visible = true
 	$NextButtonArea/NextButtonCollision.disabled = false
+	
+func _input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		$gunshot.play()
