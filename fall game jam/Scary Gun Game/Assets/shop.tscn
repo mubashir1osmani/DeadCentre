@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://sixvtrscqnvd"]
+[gd_scene load_steps=28 format=3 uid="uid://sixvtrscqnvd"]
 
 [ext_resource type="Texture2D" uid="uid://djl4pjegbti50" path="res://Assets/shop/ShopBackground.PNG" id="1_e5sx7"]
 [ext_resource type="Script" path="res://Assets/shop.gd" id="1_mbw2u"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://be6fur3n0ns37" path="res://EyeSwirl_2.png" id="12_vn3hu"]
 [ext_resource type="Texture2D" uid="uid://45rx21u4rshq" path="res://Assets/NextBut.PNG" id="14_4dlwx"]
 [ext_resource type="AudioStream" uid="uid://cuepg2anfrsj7" path="res://Assets/Audio/SoundEffect/Demon Ate Smtg Spicy RIP.mp3" id="15_wyuoh"]
+[ext_resource type="AudioStream" uid="uid://cx41ls03qsrtt" path="res://Assets/Audio/Music/creditsMusicFGJ.wav" id="16_ud8xb"]
 
 [sub_resource type="Animation" id="Animation_738xb"]
 length = 0.001
@@ -332,6 +333,11 @@ offset_right = 1507.0
 offset_bottom = 1060.0
 text = "❤️"
 label_settings = SubResource("LabelSettings_l3d6m")
+
+[node name="ShopMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_ud8xb")
+volume_db = -19.0
+autoplay = true
 
 [connection signal="input_event" from="NextButtonArea" to="." method="_on_area_2d_input_event"]
 [connection signal="input_event" from="NextButtonArea2" to="." method="_on_next_button_area_2_input_event"]
