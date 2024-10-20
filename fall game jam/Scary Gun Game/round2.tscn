@@ -71,6 +71,8 @@ polygon = PackedVector2Array(1654, 449, 1670, 448, 1835, 524, 1846, 539, 1654, 6
 [node name="gunshot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_b4mfn")
 
+[node name="Round2Theme" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="timeout" from="GameStartTimer" to="." method="_on_game_start_timer_timeout"]

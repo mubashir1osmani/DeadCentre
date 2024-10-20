@@ -9,7 +9,6 @@ var combo = 0
 var hp_bonus = 0
 var level = 0
 
-
 func _ready():
 	$ScoreLabel.text = "Tickets: %d" % score
 	#$ScoreLabel.text = "Tickets: %d" % score

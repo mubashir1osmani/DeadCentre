@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://doqvupgemct5y"]
+[gd_scene load_steps=14 format=3 uid="uid://doqvupgemct5y"]
 
 [ext_resource type="Script" path="res://testingground.gd" id="1_28gsk"]
 [ext_resource type="Texture2D" uid="uid://my5l840gfv7o" path="res://Assets/Last.PNG" id="3_8pnfu"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bwnfetl1bpdb4" path="res://Assets/Audio/Announcer/Welcome to Dead Center!.mp3" id="12_sk6xs"]
 [ext_resource type="AudioStream" uid="uid://ds7caantw343k" path="res://Assets/Audio/SoundEffect/gunshot.wav" id="12_vt6cp"]
 [ext_resource type="AudioStream" uid="uid://ch2bcmxbvp14" path="res://Assets/Audio/Announcer/Great Job!.mp3" id="13_eajhl"]
+[ext_resource type="AudioStream" uid="uid://qaln2gfyipu" path="res://Assets/Audio/Music/round1FGJ.wav" id="13_qjlhf"]
 
 [node name="Node2D5" type="Node2D"]
 script = ExtResource("1_28gsk")
@@ -97,6 +98,11 @@ stream = ExtResource("13_eajhl")
 
 [node name="gunshot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_vt6cp")
+
+[node name="Round1Theme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_qjlhf")
+volume_db = -16.387
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
