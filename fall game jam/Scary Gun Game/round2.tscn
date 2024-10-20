@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cu138esllxy2b"]
+[gd_scene load_steps=10 format=3 uid="uid://cu138esllxy2b"]
 
 [ext_resource type="Texture2D" uid="uid://dhstrwvi7cvyb" path="res://Assets/GAME-R2BG.png" id="1_51phe"]
 [ext_resource type="Script" path="res://round2.gd" id="1_imdu2"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://duqysa51tx2j6" path="res://round2badguy.tscn" id="5_qcc05"]
 [ext_resource type="AudioStream" uid="uid://bx33qh7yplaw6" path="res://Assets/Audio/Announcer/Welcome Back to Round 2!.mp3" id="7_dbq4b"]
 [ext_resource type="AudioStream" uid="uid://ctytu7atp7n23" path="res://Assets/Audio/Announcer/For Your F-Final Round!.mp3" id="8_lgyt0"]
+[ext_resource type="Texture2D" uid="uid://45rx21u4rshq" path="res://Assets/NextBut.PNG" id="9_nrypw"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_imdu2")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -37,7 +38,6 @@ z_index = 100
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.83
-autostart = true
 
 [node name="Round2_start" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_dbq4b")
@@ -45,4 +45,29 @@ stream = ExtResource("7_dbq4b")
 [node name="Round2_end" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_lgyt0")
 
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 75.0
+one_shot = true
+autostart = true
+
+[node name="GameStartTimer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[node name="NextButton" type="Sprite2D" parent="."]
+z_index = 1000
+position = Vector2(1750, 540)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_nrypw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="NextButtonCollision" type="CollisionPolygon2D" parent="Area2D"]
+z_index = 900
+polygon = PackedVector2Array(1654, 449, 1670, 448, 1835, 524, 1846, 539, 1654, 627)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
+[connection signal="timeout" from="GameStartTimer" to="." method="_on_game_start_timer_timeout"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

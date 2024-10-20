@@ -57,7 +57,6 @@ func _on_timer_timeout():
 
 
 func _on_level_timer_timeout():
-	print("LEVEL OVER!")
 	$Round1_end.play()
 	$NextButton.visible = true
 	$NextButtonArea/NextButtonCollision.disabled = false

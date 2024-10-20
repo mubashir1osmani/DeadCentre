@@ -6,6 +6,8 @@ var current_index = 0
 
 # Function to initialize the target pool
 func _ready():
+	$NextButton.visible = false
+	$NextButtonArea/NextButtonCollision.disabled = true
 	$Round2_start.play()
 	# Fill the pool with the specified targets
 	for _i in range(30):
@@ -39,3 +41,18 @@ func _on_timer_timeout():
 		current_index += 1  # Move to the next target in the pool
 	else:
 		print("All targets have been spawned!")
+
+
+func _on_game_start_timer_timeout():
+	$Timer.start()
+
+
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		print("Next button clicked!")
+		get_tree().change_scene_to_file("res://Assets/shop.tscn")
+
+
+func _on_level_timer_timeout():
+	$NextButton.visible = true
+	$NextButtonArea/NextButtonCollision.disabled = false
