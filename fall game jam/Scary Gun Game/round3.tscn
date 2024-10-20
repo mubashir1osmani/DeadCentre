@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dx6nups4sgv7r"]
+[gd_scene load_steps=16 format=3 uid="uid://dx6nups4sgv7r"]
 
 [ext_resource type="Texture2D" uid="uid://d3fyvlmvs3kyx" path="res://Assets/GAME-R3HellBG.png" id="1_aokys"]
 [ext_resource type="Script" path="res://round_3.gd" id="1_nef1n"]
@@ -9,6 +9,31 @@
 [ext_resource type="AudioStream" uid="uid://vu7krp5h6wme" path="res://Assets/Audio/Announcer/Prepare to die.mp3" id="7_rnv0s"]
 [ext_resource type="Texture2D" uid="uid://45rx21u4rshq" path="res://Assets/NextBut.PNG" id="8_5x7en"]
 [ext_resource type="AudioStream" uid="uid://ds7caantw343k" path="res://Assets/Audio/SoundEffect/gunshot.wav" id="9_enofl"]
+[ext_resource type="Texture2D" uid="uid://blpy3f6aw23sy" path="res://Assets/Horse1.png" id="10_46m6c"]
+[ext_resource type="Texture2D" uid="uid://djdti1ui0k36t" path="res://Assets/Horse2.png" id="11_j01v1"]
+[ext_resource type="Texture2D" uid="uid://cj7tumyo5wxjs" path="res://Assets/Horse3.png" id="12_riad7"]
+[ext_resource type="Texture2D" uid="uid://bntsodjsw5qqk" path="res://Assets/Horse4.png" id="13_aenjn"]
+[ext_resource type="Texture2D" uid="uid://dn4mikq0fp2r1" path="res://Assets/Flag.PNG" id="14_y5hg5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0n7dx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_46m6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_j01v1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_riad7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_aenjn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D4" type="Node2D"]
 script = ExtResource("1_nef1n")
@@ -70,6 +95,21 @@ polygon = PackedVector2Array(1654, 451, 1671, 449, 1837, 524, 1843, 539, 1654, 6
 [node name="gunshot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_enofl")
 volume_db = -15.0
+
+[node name="Horse" type="AnimatedSprite2D" parent="."]
+z_index = 35
+z_as_relative = false
+position = Vector2(-75, 825)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_0n7dx")
+frame_progress = 0.305533
+speed_scale = 0.4
+
+[node name="Flag" type="Sprite2D" parent="."]
+z_index = 35
+position = Vector2(1880, 825)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_y5hg5")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]

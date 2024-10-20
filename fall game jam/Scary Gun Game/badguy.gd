@@ -8,6 +8,8 @@ var animation_sets = ["DangerTarget", "MediumTarget", "RareTarget", "EasyTarget"
 var is_paused = false  # Variable to track if the movement is paused
 @export var target_type: String = ""
 
+var ammo
+
 func _ready():
 	set_process_input(true)
 	

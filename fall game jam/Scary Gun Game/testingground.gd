@@ -3,6 +3,7 @@ extends Node2D
 var target_pool = []
 var current_index = 0
 var can_click
+var RoundStart = false
 
 @onready var inv: Inv = preload("res://Inventory/playerinv.tres")
 
@@ -11,6 +12,7 @@ func _ready():
 	$NextButton.visible = false
 	$NextButtonArea/NextButtonCollision.disabled = true
 	$Round1_start.play()
+	$Horse.play()
 	
 	# Fill the pool with the specified targets
 	for _i in range(35):
@@ -24,7 +26,10 @@ func _ready():
 	# Shuffle the pool to randomize the order
 	target_pool.shuffle()
 
-
+func _process(delta):
+	if RoundStart:
+		$Horse.move_local_x(36.27 * delta)
+	
 func getLives():
 	return inv.Items[6].lives
 
@@ -70,6 +75,7 @@ func _on_next_button_area_input_event(viewport, event, shape_idx):
 
 
 func _on_game_start_timer_timeout(): 
+	RoundStart = true
 	$Timer.start()
 	
 func _input(event):

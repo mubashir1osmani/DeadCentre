@@ -3,12 +3,14 @@ extends Node2D
 
 var target_pool = []
 var current_index = 0
+var RoundStart = false
 
 # Function to initialize the target pool
 func _ready():
 	$NextButton.visible = false
 	$NextButtonArea/NextButtonCollision.disabled = true
 	$Round2_start.play()
+	$Horse.play()
 	# Fill the pool with the specified targets
 	for _i in range(30):
 		target_pool.append("EasyTarget")
@@ -22,6 +24,10 @@ func _ready():
 
 	# Shuffle the pool to randomize the order
 	target_pool.shuffle()
+
+func _process(delta):
+	if RoundStart:
+		$Horse.move_local_x(36.27 * delta)
 
 func spawn_bad_guy(target_type):
 	var bad_guy_scene = preload("res://round2badguy.tscn")
@@ -45,6 +51,7 @@ func _on_timer_timeout():
 
 func _on_game_start_timer_timeout():
 	$Timer.start()
+	RoundStart = true
 
 
 func _on_area_2d_input_event(viewport, event, shape_idx):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://doqvupgemct5y"]
+[gd_scene load_steps=23 format=3 uid="uid://doqvupgemct5y"]
 
 [ext_resource type="Script" path="res://testingground.gd" id="1_28gsk"]
 [ext_resource type="Texture2D" uid="uid://my5l840gfv7o" path="res://Assets/Last.PNG" id="3_8pnfu"]
@@ -13,6 +13,34 @@
 [ext_resource type="AudioStream" uid="uid://ds7caantw343k" path="res://Assets/Audio/SoundEffect/gunshot.wav" id="12_vt6cp"]
 [ext_resource type="AudioStream" uid="uid://ch2bcmxbvp14" path="res://Assets/Audio/Announcer/Great Job!.mp3" id="13_eajhl"]
 [ext_resource type="AudioStream" uid="uid://qaln2gfyipu" path="res://Assets/Audio/Music/round1FGJ.wav" id="13_qjlhf"]
+[ext_resource type="Texture2D" uid="uid://rfw2lcj33u7s" path="res://Assets/BulletCase_6.PNG" id="14_sp2lg"]
+[ext_resource type="Texture2D" uid="uid://6wk2brdkytla" path="res://Assets/Bullet6.PNG" id="15_q8k7v"]
+[ext_resource type="AudioStream" uid="uid://bun4t5kuwlbjn" path="res://Assets/clickSound.wav" id="16_mwy5j"]
+[ext_resource type="Texture2D" uid="uid://blpy3f6aw23sy" path="res://Assets/Horse1.png" id="17_8r7bh"]
+[ext_resource type="Texture2D" uid="uid://djdti1ui0k36t" path="res://Assets/Horse2.png" id="18_bis52"]
+[ext_resource type="Texture2D" uid="uid://cj7tumyo5wxjs" path="res://Assets/Horse3.png" id="19_qerec"]
+[ext_resource type="Texture2D" uid="uid://bntsodjsw5qqk" path="res://Assets/Horse4.png" id="20_gq3r1"]
+[ext_resource type="Texture2D" uid="uid://dn4mikq0fp2r1" path="res://Assets/Flag.PNG" id="21_mayh8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6rnca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_8r7bh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_bis52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qerec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_gq3r1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D5" type="Node2D"]
 script = ExtResource("1_28gsk")
@@ -104,6 +132,37 @@ volume_db = -15.0
 stream = ExtResource("13_qjlhf")
 volume_db = -16.387
 autoplay = true
+
+[node name="BulletCase6" type="Sprite2D" parent="."]
+z_index = 1000
+position = Vector2(1715, 959)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_sp2lg")
+
+[node name="Bullet6" type="Sprite2D" parent="."]
+z_index = 1001
+position = Vector2(1715, 958)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_q8k7v")
+
+[node name="NoAmmo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_mwy5j")
+volume_db = 8.0
+
+[node name="Horse" type="AnimatedSprite2D" parent="."]
+z_index = 35
+z_as_relative = false
+position = Vector2(-75, 775)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_6rnca")
+frame_progress = 0.990974
+speed_scale = 0.4
+
+[node name="Flag" type="Sprite2D" parent="."]
+z_index = 36
+position = Vector2(1880, 775)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("21_mayh8")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
