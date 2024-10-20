@@ -14,8 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://hjn2enim3rma" path="res://EyeSwirl_1.png" id="11_t5en4"]
 [ext_resource type="Texture2D" uid="uid://be6fur3n0ns37" path="res://EyeSwirl_2.png" id="12_vn3hu"]
 [ext_resource type="Texture2D" uid="uid://45rx21u4rshq" path="res://Assets/NextBut.PNG" id="14_4dlwx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hoddt"]
+[ext_resource type="AudioStream" uid="uid://cuepg2anfrsj7" path="res://Assets/Audio/SoundEffect/Demon Ate Smtg Spicy RIP.mp3" id="15_wyuoh"]
 
 [sub_resource type="Animation" id="Animation_738xb"]
 length = 0.001
@@ -143,9 +142,6 @@ position = Vector2(608, 563)
 scale = Vector2(0.309815, 0.302352)
 texture = ExtResource("4_naarb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="3DGlasses"]
-shape = SubResource("RectangleShape2D_hoddt")
-
 [node name="Candy" type="Sprite2D" parent="."]
 position = Vector2(977, 554)
 scale = Vector2(0.215287, 0.203125)
@@ -248,6 +244,10 @@ offset_right = 1691.0
 offset_bottom = 1016.0
 rotation = -1.5708
 text = "LEVEL 3"
+
+[node name="ShopKeep2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_wyuoh")
+autoplay = true
 
 [connection signal="input_event" from="NextButtonArea" to="." method="_on_area_2d_input_event"]
 [connection signal="input_event" from="NextButtonArea2" to="." method="_on_next_button_area_2_input_event"]
