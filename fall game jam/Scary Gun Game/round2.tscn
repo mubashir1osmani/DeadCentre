@@ -71,6 +71,7 @@ polygon = PackedVector2Array(1654, 449, 1670, 448, 1835, 524, 1846, 539, 1654, 6
 
 [node name="gunshot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_b4mfn")
+volume_db = -15.0
 
 [node name="Round2Theme" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_2sere")

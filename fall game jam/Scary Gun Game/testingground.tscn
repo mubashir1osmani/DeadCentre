@@ -97,6 +97,7 @@ stream = ExtResource("13_eajhl")
 
 [node name="gunshot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_vt6cp")
+volume_db = -15.0
 
 [node name="Round1Theme" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_qjlhf")
