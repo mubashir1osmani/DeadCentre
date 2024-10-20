@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlp81m4brabic"]
+[gd_scene load_steps=7 format=3 uid="uid://dlp81m4brabic"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_ugk5y"]
 [ext_resource type="FontFile" uid="uid://njywc33hyf43" path="res://Assets/fonts/Wooden Log.ttf" id="2_4wx0p"]
 [ext_resource type="Texture2D" uid="uid://dunwh2b7kvqm3" path="res://Assets/Screen_Shot_2024-10-19_at_5.23.58_PM.png" id="3_u8m3y"]
+[ext_resource type="AudioStream" uid="uid://c6e42vda1dvye" path="res://Assets/Audio/Music/titleThemeLoopable.wav" id="4_8cnhr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e67we"]
 bg_color = Color(0.439216, 0.6, 0.6, 1)
@@ -34,6 +35,7 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 100
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
@@ -61,6 +63,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_2jwbt")
 text = "Quit"
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 offset_left = -326.0
 offset_top = -244.0
@@ -73,9 +76,14 @@ theme_override_font_sizes/font_size = 90
 text = "DEAD CENTRE"
 
 [node name="ScreenShot2024-10-19At5_23_58Pm" type="Sprite2D" parent="."]
-position = Vector2(-5.00679e-06, -2.14577e-05)
-scale = Vector2(0.561404, 0.485612)
+z_index = -10
+position = Vector2(1.49992, -19.4999)
+scale = Vector2(0.685088, 0.52563)
 texture = ExtResource("3_u8m3y")
+
+[node name="maintheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_8cnhr")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_options_pressed"]
