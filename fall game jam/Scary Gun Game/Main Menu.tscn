@@ -51,7 +51,7 @@ size_flags_vertical = 2
 theme_override_fonts/font = ExtResource("2_4wx0p")
 theme_override_font_sizes/font_size = 19
 theme_override_styles/focus = SubResource("StyleBoxFlat_2jwbt")
-text = "Credits"
+text = "Credenza"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
