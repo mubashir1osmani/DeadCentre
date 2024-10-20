@@ -6,6 +6,7 @@ var current_index = 0
 
 # Function to initialize the target pool
 func _ready():
+	$Round2_start.play()
 	# Fill the pool with the specified targets
 	for _i in range(30):
 		target_pool.append("EasyTarget")
