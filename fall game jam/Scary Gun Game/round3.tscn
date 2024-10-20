@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dx6nups4sgv7r"]
+[gd_scene load_steps=17 format=3 uid="uid://dx6nups4sgv7r"]
 
 [ext_resource type="Texture2D" uid="uid://d3fyvlmvs3kyx" path="res://Assets/GAME-R3HellBG.png" id="1_aokys"]
 [ext_resource type="Script" path="res://round_3.gd" id="1_nef1n"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cj7tumyo5wxjs" path="res://Assets/Horse3.png" id="12_riad7"]
 [ext_resource type="Texture2D" uid="uid://bntsodjsw5qqk" path="res://Assets/Horse4.png" id="13_aenjn"]
 [ext_resource type="Texture2D" uid="uid://dn4mikq0fp2r1" path="res://Assets/Flag.PNG" id="14_y5hg5"]
+[ext_resource type="AudioStream" uid="uid://48v8ld4dkk77" path="res://Assets/Audio/Music/round3igFGJ.wav" id="15_aof8d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0n7dx"]
 animations = [{
@@ -110,6 +111,11 @@ z_index = 35
 position = Vector2(1880, 825)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("14_y5hg5")
+
+[node name="Round3_theme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_aof8d")
+volume_db = -16.0
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
