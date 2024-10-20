@@ -29,3 +29,9 @@ func getTickets():
 	
 func setTickets(t):
 	inv.Items[7].tickets = t
+
+
+func _on_next_button_area_2_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		print("Next button clicked!")
+		get_tree().change_scene_to_file("res://round3.tscn")
