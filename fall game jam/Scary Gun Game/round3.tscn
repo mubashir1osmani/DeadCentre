@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://vu7krp5h6wme" path="res://Assets/Audio/Announcer/Prepare to die.mp3" id="7_rnv0s"]
 [ext_resource type="Texture2D" uid="uid://45rx21u4rshq" path="res://Assets/NextBut.PNG" id="8_5x7en"]
 
-[node name="Node2D2" type="Node2D"]
+[node name="Node2D4" type="Node2D"]
 script = ExtResource("1_nef1n")
 
 [node name="Hell" type="Sprite2D" parent="."]

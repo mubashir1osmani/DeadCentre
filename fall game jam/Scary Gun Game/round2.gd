@@ -54,5 +54,6 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 
 
 func _on_level_timer_timeout():
+	$Round2_end.play()
 	$NextButton.visible = true
 	$NextButtonArea/NextButtonCollision.disabled = false

@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bwnfetl1bpdb4" path="res://Assets/Audio/Announcer/Welcome to Dead Center!.mp3" id="12_sk6xs"]
 [ext_resource type="AudioStream" uid="uid://ch2bcmxbvp14" path="res://Assets/Audio/Announcer/Great Job!.mp3" id="13_eajhl"]
 
-[node name="Node2D3" type="Node2D"]
+[node name="Node2D5" type="Node2D"]
 script = ExtResource("1_28gsk")
 
 [node name="Background" type="Sprite2D" parent="."]
