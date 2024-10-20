@@ -61,13 +61,13 @@ position = Vector2(1750, 540)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("9_nrypw")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="NextButtonArea" type="Area2D" parent="."]
 
-[node name="NextButtonCollision" type="CollisionPolygon2D" parent="Area2D"]
+[node name="NextButtonCollision" type="CollisionPolygon2D" parent="NextButtonArea"]
 z_index = 900
 polygon = PackedVector2Array(1654, 449, 1670, 448, 1835, 524, 1846, 539, 1654, 627)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="timeout" from="GameStartTimer" to="." method="_on_game_start_timer_timeout"]
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="NextButtonArea" to="." method="_on_area_2d_input_event"]

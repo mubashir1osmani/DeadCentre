@@ -99,8 +99,8 @@ animations = [{
 script = ExtResource("1_mbw2u")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(976.5, 547.076)
-scale = Vector2(0.48925, 0.363283)
+position = Vector2(960, 540)
+scale = Vector2(0.48, 0.36)
 texture = ExtResource("1_e5sx7")
 
 [node name="PriceTag" type="Sprite2D" parent="."]
@@ -201,16 +201,16 @@ scale = Vector2(0.06388, 0.0775249)
 sprite_frames = SubResource("SpriteFrames_qyy0x")
 animation = &"ShopEyes"
 
-[node name="NextBut" type="Sprite2D" parent="."]
+[node name="NextButton" type="Sprite2D" parent="."]
 z_index = 12
 position = Vector2(1750, 940)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("14_4dlwx")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="NextButtonArea" type="Area2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="NextButtonCollision" type="CollisionPolygon2D" parent="NextButtonArea"]
 z_index = 11
 polygon = PackedVector2Array(1652, 851, 1670, 850, 1837, 925, 1848, 937, 1653, 1029)
 
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="NextButtonArea" to="." method="_on_area_2d_input_event"]
