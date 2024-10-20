@@ -13,7 +13,7 @@ func _ready():
 	$Round1_start.play()
 	
 	# Fill the pool with the specified targets
-	for _i in range(35):
+	for _i in range(30005):
 		target_pool.append("EasyTarget")
 	for _i in range(10):
 		target_pool.append("MediumTarget")

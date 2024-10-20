@@ -8,13 +8,13 @@ var lives = 100
 var combo = 0
 var hp_bonus = 0
 var level = 0
-
 func _ready():
 	$ScoreLabel.text = "Tickets: %d" % score
 	#$ScoreLabel.text = "Tickets: %d" % score
 	$LivesLabel.text = "Sanity: %d" % lives
 
 func add_points(points):
+	$AudioStreamPlayer2D.play()
 	score += points
 	$ScoreLabel.text = "Tickets: %d" % score
 

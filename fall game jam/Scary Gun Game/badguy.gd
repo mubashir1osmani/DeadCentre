@@ -74,24 +74,6 @@ func _ready():
 			position = Vector2(get_viewport_rect().size.x, 100)
 			z_index = 5
 			speed = -325
-"""
-		5:  # Right to left
-			position = Vector2(get_viewport_rect().size.x, get_random_height())
-			speed = -300
-		6:  # Left to middle, then turn around to the right
-			position = Vector2(0, get_random_height())
-			speed = 300
-			target_position = get_viewport_rect().size.x / 2
-		7:  # Right to middle, then turn around to the left
-			position = Vector2(get_viewport_rect().size.x, get_random_height())
-			speed = -300
-			target_position = get_viewport_rect().size.x / 2
-		8:  # Top to bottom
-			position = Vector2(100 + randi() % (int(get_viewport_rect().size.x) - 200), 0)
-			z_index = 35
-			speed = 300
-			target_position = position.y + 150
-"""
 
 func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
@@ -100,15 +82,20 @@ func _input_event(_viewport, event, _shape_idx):
 				"EasyTarget":
 					get_tree().call_group("player", "add_points", 1)
 					get_tree().call_group("player", "change_combo", 1)
+					$AudioStreamPlayer.play()
 				"MediumTarget":
 					get_tree().call_group("player", "add_points", 2)
 					get_tree().call_group("player", "change_combo", 1)
+					$AudioStreamPlayer.play()
 				"DangerTarget":
 					get_tree().call_group("player", "add_points", 3)
 					get_tree().call_group("player", "change_combo", 1)
+					$AudioStreamPlayer.play()
 				"RareTarget":
 					get_tree().call_group("player", "add_points", 10)
 					get_tree().call_group("player", "change_combo", 1)
+					$AudioStreamPlayer.play()
+			$AudioStreamPlayer.play()
 
 			
 			queue_free()  # Remove the target once it's shot
