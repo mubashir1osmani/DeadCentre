@@ -47,8 +47,8 @@ text = "QUIT"
 
 [node name="ScreenShot2024-10-19At5_57_32Pm" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(957, 173)
-scale = Vector2(0.561404, 0.485612)
+position = Vector2(950, 150)
+scale = Vector2(0.669591, 0.506295)
 texture = ExtResource("2_bgvcv")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Retry" to="." method="_on_retry_pressed"]

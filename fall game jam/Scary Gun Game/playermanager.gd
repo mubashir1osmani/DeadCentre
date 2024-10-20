@@ -24,6 +24,8 @@ func change_lives(lives_mod):
 	if lives > 100:
 		lives = 100
 	$LivesLabel.text = "Sanity: %d" % lives
+	if lives < 1:
+		get_tree().change_scene_to_file("res://gameover.tscn")
 
 func change_combo(combo_mod):
 	combo += combo_mod
