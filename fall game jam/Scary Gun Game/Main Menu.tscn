@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlp81m4brabic"]
+[gd_scene load_steps=6 format=3 uid="uid://dlp81m4brabic"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_ugk5y"]
 [ext_resource type="FontFile" uid="uid://njywc33hyf43" path="res://Assets/fonts/Wooden Log.ttf" id="2_4wx0p"]
+[ext_resource type="Texture2D" uid="uid://dunwh2b7kvqm3" path="res://Assets/Screen_Shot_2024-10-19_at_5.23.58_PM.png" id="3_u8m3y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e67we"]
 bg_color = Color(0.439216, 0.6, 0.6, 1)
@@ -70,6 +71,11 @@ theme_override_constants/shadow_offset_x = 10
 theme_override_fonts/font = ExtResource("2_4wx0p")
 theme_override_font_sizes/font_size = 90
 text = "DEAD CENTRE"
+
+[node name="ScreenShot2024-10-19At5_23_58Pm" type="Sprite2D" parent="."]
+position = Vector2(-5.00679e-06, -2.14577e-05)
+scale = Vector2(0.561404, 0.485612)
+texture = ExtResource("3_u8m3y")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_options_pressed"]
