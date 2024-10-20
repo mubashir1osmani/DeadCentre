@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhw4r8ki21djv"]
+[gd_scene load_steps=6 format=3 uid="uid://dhw4r8ki21djv"]
 
 [ext_resource type="Script" path="res://playermanager.gd" id="1_ktasq"]
 [ext_resource type="FontFile" uid="uid://njywc33hyf43" path="res://Assets/fonts/Wooden Log.ttf" id="2_h7o7v"]
 [ext_resource type="Resource" uid="uid://ct5uhm606uswe" path="res://Inventory/playerinv.tres" id="2_htc6e"]
 [ext_resource type="PackedScene" uid="uid://bk33mu5k7qv4v" path="res://Inventory/inventory_ui.tscn" id="4_fxywc"]
+[ext_resource type="AudioStream" uid="uid://645bo7o3eag4" path="res://Assets/targetHit.wav" id="5_anre2"]
 
 [node name="PlayerManager" type="Node2D" groups=["player"]]
 script = ExtResource("1_ktasq")
@@ -47,3 +48,7 @@ offset_left = 121.0
 offset_top = 931.0
 offset_right = 1162.0
 offset_bottom = 1049.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_anre2")
+volume_db = 5.0
